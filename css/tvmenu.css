@@ -1,7 +1,16 @@
-.wrapper-content {
+.wrapper-content-filter {
   display: flex;
   justify-content: space-between;
+  
+  & .wrapper-content {
+    max-width: 80%;
+
+    @media screen and (max-width: 768px) {
+      max-width: 55%;
+    }
+  }
 }
+// название макета 
 p.name {
   display: inline-block;
   margin-top: 0.3em;
@@ -19,7 +28,7 @@ p.name {
   padding: 0.8em 0.9em;
   margin-left: 1em;
   border-radius: 0.4em;
-  max-width: 20%;
+  /* max-width: 30%; */
   max-height: fit-content;
 
   @media screen and (max-width: 768px) {
@@ -39,26 +48,25 @@ p.name {
   & .legend {
     font-size: 0.9em;
   }
+  & .fieldset {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0;
+    border: none;
+    font-size: 0.8em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.7em;
+      flex-direction: column;
+    }
+  }
 }
 
 .layout-wrapper {
   /* max-width: 11.5em; */
   @media screen and (max-width: 768px) {
     /* max-width: 70%; */
-  }
-}
-
-// Form
-fieldset {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  border: none;
-  font-size: 0.8em;
-
-  @media screen and (max-width: 768px) {
-    font-size: 0.7em;
-    flex-direction: column;
   }
 }
 

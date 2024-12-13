@@ -204,7 +204,18 @@
     border-top-color: rgba(var(--ids__text-RGB), 0.2);
     border-bottom: 0;
   }
-  fieldset {
+
+  // FORM
+  /* & fieldset {
     border: none;
-  }
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 0.8em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.7em;
+      flex-direction: column;
+    }
+  } */
 }
