@@ -1,0 +1,100 @@
+.wrapper-content {
+  display: flex;
+  justify-content: space-between;
+}
+p.name {
+  display: inline-block;
+  margin-top: 0.3em;
+  padding: 0.1em 0.3em;
+  border: 1px solid black;
+  border-radius: 0.4em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8em;
+  }
+}
+
+.filter-menu {
+  background-color: rgba(var(--ids__text-RGB), 0.1);
+  padding: 0.8em 0.9em;
+  margin-left: 1em;
+  border-radius: 0.4em;
+  max-width: 20%;
+  max-height: fit-content;
+
+  @media screen and (max-width: 768px) {
+    max-width: 50%;
+    margin-left: 0.1em;
+  }
+
+  & h1 {
+    font-size: 1.3em;
+    line-height: 1.35em;
+    font-weight: 550;
+  }
+  & p {
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+  & .legend {
+    font-size: 0.9em;
+  }
+}
+
+.layout-wrapper {
+  /* max-width: 11.5em; */
+  @media screen and (max-width: 768px) {
+    /* max-width: 70%; */
+  }
+}
+
+// Form
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  border: none;
+  font-size: 0.8em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    flex-direction: column;
+  }
+}
+
+.option-wrap {
+  & .option {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    margin-bottom: 0.3em;
+    font-size: 0.9em;
+
+    & input {
+      margin-right: 0.2em;
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  position: relative;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  border: 0.5px solid black;
+  outline: 0.5px solid black;
+  appearance: none;
+  cursor: pointer;
+}
+
+input:checked {
+  border: 2px solid lightgray;
+  background-color: black;
+  outline: 0.5px solid black;
+  transition: 0.2s all linear;
+}
