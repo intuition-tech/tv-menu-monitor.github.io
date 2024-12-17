@@ -1,7 +1,9 @@
+/* <!-- обертка для контента и фильтра  --> */
 .wrapper-content-filter {
   display: flex;
   justify-content: space-between;
-  
+
+  /* обертка для контента */
   & .wrapper-content {
     max-width: 80%;
 
@@ -10,8 +12,9 @@
     }
   }
 }
-// название макета 
-p.name {
+
+/* // название макета */
+p.title {
   display: inline-block;
   margin-top: 0.3em;
   padding: 0.1em 0.3em;
@@ -23,12 +26,12 @@ p.name {
   }
 }
 
+/* ФИЛЬТР МЕНЮ  */
 .filter-menu {
   background-color: rgba(var(--ids__text-RGB), 0.1);
   padding: 0.8em 0.9em;
   margin-left: 1em;
   border-radius: 0.4em;
-  /* max-width: 30%; */
   max-height: fit-content;
 
   @media screen and (max-width: 768px) {
@@ -41,6 +44,7 @@ p.name {
     line-height: 1.35em;
     font-weight: 550;
   }
+
   & p {
     font-size: 0.8em;
     font-weight: 500;
@@ -61,25 +65,13 @@ p.name {
       flex-direction: column;
     }
   }
-}
 
-.layout-wrapper {
-  /* max-width: 11.5em; */
-  @media screen and (max-width: 768px) {
-    /* max-width: 70%; */
-  }
-}
-
-.option-wrap {
-  & .option {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    margin-bottom: 0.3em;
-    font-size: 0.9em;
-
-    & input {
-      margin-right: 0.2em;
+  /* обертка для черных кружков и текста  */
+  & .option-wrap {
+    /* текст после черных кружков  */
+    & .option {
+      margin-bottom: 0.3em;
+      font-size: 0.9em;
     }
   }
 }
@@ -88,21 +80,49 @@ label {
   cursor: pointer;
 }
 
-input {
+/* черные кружки */
+input.radio {
   position: relative;
-  border-radius: 50%;
   width: 16px;
   height: 16px;
   top: 2px;
+  margin-right: 0.2em;
+  border-radius: 50%;
   border: 0.5px solid black;
   outline: 0.5px solid black;
   appearance: none;
   cursor: pointer;
+
+  &:focus:not(:focus-visible) {
+    outline: 0.5px solid black;
+  }
+
+  &:checked {
+    border: 2px solid lightgray;
+    background-color: black;
+    outline: 0.5px solid black;
+    transition: 0.2s all linear;
+  }
 }
 
-input:checked {
-  border: 2px solid lightgray;
-  background-color: black;
-  outline: 0.5px solid black;
-  transition: 0.2s all linear;
+/* Название 41 цикл */
+.name-of-cycle {
+  display: flex;
+  & p:nth-child(2) {
+    margin-left: 1em;
+  }
+}
+
+a.guide-link {
+  display: inline-block;
+  color: var(--ids__text-RGB);
+  border: none;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: underline;
+
+  &:hover {
+    border: none;
+  }
 }
