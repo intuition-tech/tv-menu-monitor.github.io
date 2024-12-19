@@ -15,15 +15,25 @@
 
 /* // название макета */
 p.title {
-  display: inline-block;
+  display: inline-flex;
   margin-top: 0.3em;
   padding: 0.1em 0.3em;
   border: 1px solid black;
   border-radius: 0.4em;
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
     font-size: 0.8em;
   }
+
+  & img {
+    display: inline;
+    width: 0.8em;
+    margin-top: -0.8em;
+  }
+}
+.copyDone {
+  background-color: red;
 }
 
 /* ФИЛЬТР МЕНЮ  */
