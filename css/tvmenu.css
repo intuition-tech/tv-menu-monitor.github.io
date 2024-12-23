@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
 
-  /* обертка для контента */
+  /* обертка для контента (макетов) общая */
   & .wrapper-content {
     max-width: 80%;
 
@@ -11,6 +11,19 @@
       max-width: 55%;
     }
   }
+  /* обертка для вертикальных макетов */
+  /* & .vertical {
+    @media screen and (max-width: 768px) {
+      max-width: 55%;
+    }
+  } */
+}
+
+.hide {
+  display: none;
+}
+.active {
+  display: flex;
 }
 
 /* // название макета */
@@ -18,12 +31,13 @@ p.title {
   display: inline-flex;
   margin-top: 0.3em;
   padding: 0.1em 0.3em;
+  font-size: 0.9em;
   border: 1px solid black;
   border-radius: 0.4em;
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   & img {
@@ -31,9 +45,6 @@ p.title {
     width: 0.8em;
     margin-top: -0.8em;
   }
-}
-.copyDone {
-  background-color: red;
 }
 
 /* ФИЛЬТР МЕНЮ  */
@@ -115,7 +126,7 @@ input.radio {
   }
 }
 
-/* Название 41 цикл */
+/* Название "41 цикл" */
 .name-of-cycle {
   display: flex;
   & p:nth-child(2) {
