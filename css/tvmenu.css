@@ -1,32 +1,20 @@
-/* <!-- обертка для контента и фильтра  --> */
+/* <!-- обертка для макетов и фильтр-меню  --> */
 .wrapper-content-filter {
   display: flex;
   justify-content: space-between;
 
-  /* обертка для контента (макетов) общая */
-  & .wrapper-content {
+  /* обертка для каждого вида макетов */
+  & .wrapper-menu-content {
+    display: none;
     max-width: 80%;
 
     @media screen and (max-width: 768px) {
       max-width: 55%;
     }
   }
-  /* обертка для вертикальных макетов */
-  /* & .vertical {
-    @media screen and (max-width: 768px) {
-      max-width: 55%;
-    }
-  } */
 }
 
-.hide {
-  display: none;
-}
-.active {
-  display: flex;
-}
-
-/* // название макета */
+/* // название макета МОЖНО СКОПИРОВАТЬ */
 p.title {
   display: inline-flex;
   margin-top: 0.3em;
@@ -39,13 +27,9 @@ p.title {
   @media screen and (max-width: 768px) {
     font-size: 1em;
   }
-
-  & img {
-    display: inline;
-    width: 0.8em;
-    margin-top: -0.8em;
-  }
 }
+
+/* /////////////////////////////////////////////////////////////////// */
 
 /* ФИЛЬТР МЕНЮ  */
 .filter-menu {
@@ -54,9 +38,10 @@ p.title {
   margin-left: 1em;
   border-radius: 0.4em;
   max-height: fit-content;
+  width: 20%;
 
   @media screen and (max-width: 768px) {
-    max-width: 50%;
+    width: 50%;
     margin-left: 0.1em;
   }
 
@@ -70,9 +55,8 @@ p.title {
     font-size: 0.8em;
     font-weight: 500;
   }
-  & .legend {
-    font-size: 0.9em;
-  }
+
+  /* // формат и период */
   & .fieldset {
     display: flex;
     flex-wrap: nowrap;
@@ -85,14 +69,43 @@ p.title {
       font-size: 0.7em;
       flex-direction: column;
     }
+    // Формат / период
+    & p.legend {
+      font-size: 0.95em;
+
+      @media screen and (max-width: 768px) {
+        font-weight: 580;
+        font-size: 1em;
+        margin-bottom: 0.2em;
+      }
+    }
   }
 
-  /* обертка для черных кружков и текста  */
+  /* обертка для двух радиокнопок (черных кружков) и текста  */
   & .option-wrap {
-    /* текст после черных кружков  */
+    /* обертка для одной радиокнопки  */
     & .option {
       margin-bottom: 0.3em;
       font-size: 0.9em;
+
+      @media screen and (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        font-weight: 450;
+      }
+
+      & input {
+        @media screen and (max-width: 768px) {
+          margin-right: 0.4em;
+        }
+      }
+      & label {
+        @media screen and (max-width: 768px) {
+          font-size: 1.1em;
+          margin-top: 0.3em;
+        }
+      }
     }
   }
 }
@@ -101,7 +114,7 @@ label {
   cursor: pointer;
 }
 
-/* черные кружки */
+/* радиокнопки (черные кружки) */
 input.radio {
   position: relative;
   width: 16px;
@@ -126,14 +139,147 @@ input.radio {
   }
 }
 
-/* Название "41 цикл" */
-.name-of-cycle {
+/* ///////////////////////////////////////////////////////////////// */
+
+/* выпадающее меню "Вид меню" */
+#dropdown {
   display: flex;
-  & p:nth-child(2) {
-    margin-left: 1em;
+  justify-content: space-between;
+  height: 8em;
+  margin-top: 2em;
+
+  @media screen and (max-width: 768px) {
+    height: 10em;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 0.8em;
+  }
+
+  & nav {
+    width: 6.5em;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+      width: 8em;
+    }
+  }
+
+  & p {
+    white-space: nowrap;
+    font-size: 0.7em;
+    font-weight: 580;
+    padding-top: 0.3em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.75em;
+      margin-bottom: 0.2em;
+    }
+  }
+  /* кнопка открытия меню */
+  & button {
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+    white-space: nowrap;
+    font-size: 0.7em;
+    font-weight: 580;
+    padding: 0.3em 0;
+    border: 2px solid black;
+
+    border-radius: 0.4em;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      width: 11.5em;
+    }
+
+    &.active {
+      /* // arrow down */
+      & span.arrow {
+        margin-bottom: 0;
+        margin-top: 0.3em;
+        transition: transform 0.3s ease-out;
+        transform: rotate(224deg);
+      }
+    }
+  }
+  /* // arrow up */
+  & span.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid;
+    border-color: rgba(var(--ids__text-RGB), 0.75);
+    border-width: 0 1.3px 1.3px 0;
+    padding: 3px;
+    transition: transform 0.3s ease-out, border-color 0.3s ease;
+    transform: rotate(45deg);
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+  }
+
+  & ul#menuList {
+    display: none;
+    margin-top: 0.1em;
+
+    & li {
+      margin: 0;
+      margin-top: 0.2em;
+      padding: 0.3em 0 0.2em 0.2em;
+      font-size: 0.75em;
+      background-color: rgb(242, 242, 242);
+      border-radius: 0.3em;
+      cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        margin-top: 0.2em;
+        padding: 0.4em 0 0.3em 0.2em;
+      }
+
+      &:hover {
+        background-color: white;
+      }
+      &:before {
+        content: none;
+      }
+    }
+    &.hide {
+      display: none;
+    }
+    &.active {
+      display: block;
+    }
+  }
+  /* описание под каждым видом меню */
+  & .description-wrap {
+    width: 6.5em;
+    margin-top: 0.3em;
+    padding: 0 0.1em 0 0.2em;
+
+    & #menu-description {
+      font-weight: 450;
+      white-space: break-spaces;
+    }
   }
 }
 
+/* ///////////////////////////////////////////////////////////////// */
+
+/* Название "41 цикл" */
+.cycle-name {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5em 0;
+  width: 8em;
+
+  @media screen and (max-width: 768px) {
+    width: 7em;
+  }
+}
+
+/* ссылка на гайд  */
 a.guide-link {
   display: inline-block;
   color: var(--ids__text-RGB);
@@ -146,4 +292,14 @@ a.guide-link {
   &:hover {
     border: none;
   }
+}
+
+
+/* ///////////////////////////////////////////////////////////////// */
+
+.active {
+  display: block;
+}
+.hide {
+  display: none;
 }
