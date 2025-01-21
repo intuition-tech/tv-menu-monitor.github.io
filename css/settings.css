@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -6,15 +5,17 @@
 /* Fonts */
 
 @font-face {
-  font-family: "Root UI";
+  /* font-family: "Root UI"; */
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/pt-root-ui_vf.woff2") format("woff2"),
-    url("../fonts/pt-root-ui_vf.woff") format("woff");
+  /* src: url("../fonts/pt-root-ui_vf.woff2") format("woff2"),
+    url("../fonts/pt-root-ui_vf.woff") format("woff"); */
+  font-family: "Rooftop";
+  src: url("../fonts/Rooftop-Regular.otf") format("opentype");
 }
 
 body {
-  font-family: "Root UI";
+  font-family: "Rooftop";
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }

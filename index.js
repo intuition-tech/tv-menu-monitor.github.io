@@ -6,9 +6,10 @@ function copyTitle(title) {
     const text = title.textContent;
     navigator.clipboard.writeText(text);
     title.innerText = 'Скопировано';
-    setTimeout(() => {
-      
+    
+    setTimeout(() => {      
       title.innerText = text; // надпись 'Скопировано' исчезает через 1 сек
+      
     }, 450);
     
   });
@@ -18,38 +19,7 @@ titlesArray.forEach(copyTitle);
 
 
 
-// видимость контента при фильтрации 
-const toggleVisibility = (showElement, hideElement) => {
-  showElement.classList.remove('hide'); // Показать элемент
-  hideElement.classList.add('hide');    // Скрыть элемент
-};
-
-// Переключение формата (ветрикальные / горизонтальные)
-// const verticalButton = document.getElementById('vertical');
-// const horizontalButton = document.getElementById('horizontal');
-
-// verticalButton.addEventListener('change', () => {
-//   toggleVisibility(
-//     document.querySelector('.vertical'),
-//     document.querySelector('.horizontal')
-//   );
-// });
-// horizontalButton.addEventListener('change', () => {
-//   toggleVisibility(
-//     document.querySelector('.horizontal'),
-//     document.querySelector('.vertical')
-//   );
-// });
-
-
-
-
-
-
-
-
-
-
+//////// - ФИЛЬТР МЕНЮ -
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -100,27 +70,49 @@ document.addEventListener('DOMContentLoaded', () => {
     
       // <form id="period"> "present"/previous
       const selectedPeriod = document.querySelector('input[name="period"]:checked').value;
-    
-      menuItems.forEach(item => {
-          //<div class="wrapper-menu-content"
-          // data-type="base"/"far-east"/"no-pork"/"pizza-bar"
-          const itemType = item.dataset.type;
-          // data-format="horizontal"/vertical
-          const itemFormat = item.dataset.format;
-          // data-period="present"/previous
-          const itemPeriod = item.dataset.period;
-          
 
-          // Проверяем соответствие выбранным параметрам
+      const verticalButton = document.getElementById('vertical');
+        const horizontalOption = document.getElementById('horizontalOption');
+        const horizontalButton = document.getElementById('horizontal');
+
+      // отключение Горизонтального формата для Пицца-Бар
+      if (selectedFilter === 'pizza-bar') {
+        verticalButton.checked = true;
+        // selectedFormat = 'vertical';
+        horizontalOption.classList.add('disabled');
+        horizontalButton.disabled = true; 
+      } else {
+        horizontalOption.classList.remove('disabled');
+        horizontalButton.disabled = false; // Разрешаем выбор horizontal
+      }
+      menuItems.forEach(item => {
+        //<div class="wrapper-menu-content"
+        // data-type="base"/"far-east"/"no-pork"/"pizza-bar"
+        const itemType = item.dataset.type;
+        // data-format="horizontal"/vertical
+        const itemFormat = item.dataset.format;
+        // data-period="present"/previous
+        const itemPeriod = item.dataset.period;
+        
+
+          // показать меню в соотв. с выбранными параметрами
           if (itemType === selectedFilter && itemFormat === selectedFormat && itemPeriod === selectedPeriod) {
-              item.style.display = 'block'; // Показываем элемент
-              // menuDescription.classList.add('active');
-          } else {
+            item.style.display = 'block'; 
+            
+            
+            // Черно-белый фильтр для макетов ПРЕДЫДУЩЕГО периода
+            if (itemPeriod === 'previous') { 
+              item.classList.add('previous');
+            }
+             
+          } else if (selectedFilter === 'pizza-bar' && selectedFormat === 'horizontal' && itemPeriod === selectedPeriod) {
+            filterMenu(); 
+          }  else {
               item.style.display = 'none'; // Скрываем элемент 
-              // menuDescription.classList.remove('active');
           }
           
       }); 
+
   }
   
   
@@ -140,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
           menuDescription.classList.remove('hide');
           
         } 
+        
         filterMenu();
         toggleMenu(true); // Закрытие меню после выбора
     });

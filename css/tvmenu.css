@@ -6,10 +6,15 @@
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
-    max-width: 80%;
+    max-width: 77%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1019px) {
       max-width: 55%;
+    }
+  }
+  & .previous {
+    img {
+      filter: grayscale();
     }
   }
 }
@@ -17,16 +22,17 @@
 /* // название макета МОЖНО СКОПИРОВАТЬ */
 p.title {
   display: inline-flex;
+  margin: 0;
   margin-top: 0.3em;
   padding: 0.1em 0.3em;
-  font-size: 0.9em;
+  font-size: .8em;
   border: 1px solid black;
   border-radius: 0.4em;
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
-    font-size: 1em;
-  }
+  /* @media screen and (max-width: 1019px) {
+    font-size: .8em;
+  } */
 }
 
 /* /////////////////////////////////////////////////////////////////// */
@@ -34,26 +40,36 @@ p.title {
 /* ФИЛЬТР МЕНЮ  */
 .filter-menu {
   background-color: rgba(var(--ids__text-RGB), 0.1);
-  padding: 0.8em 0.9em;
-  margin-left: 1em;
+  padding: 0.6em 0.6em;
+  margin-left: .5em;
   border-radius: 0.4em;
   max-height: fit-content;
-  width: 20%;
+  width: 23%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1019px) {
     width: 50%;
     margin-left: 0.1em;
   }
 
   & h1 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     line-height: 1.35em;
-    font-weight: 550;
+    /* font-weight: 550; */
+
+    @media screen and (max-width: 1019px) {
+      font-size: 1.2em;
+      
+    }
   }
 
   & p {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
+   
+
+    @media screen and (max-width: 1019px) {
+      font-size: 0.9em;
+    }
   }
 
   /* // формат и период */
@@ -61,53 +77,62 @@ p.title {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: baseline;
     padding: 0;
     border: none;
-    font-size: 0.8em;
 
-    @media screen and (max-width: 768px) {
-      font-size: 0.7em;
+    @media screen and (max-width: 1019px) {
       flex-direction: column;
-    }
-    // Формат / период
-    & p.legend {
-      font-size: 0.95em;
-
-      @media screen and (max-width: 768px) {
-        font-weight: 580;
-        font-size: 1em;
-        margin-bottom: 0.2em;
-      }
-    }
+    }  
   }
+  & .legend {
+    margin: 0;
 
+  }
+  
   /* обертка для двух радиокнопок (черных кружков) и текста  */
-  & .option-wrap {
+  & .option-wrap {  
+    width: 54%;
+
+    @media screen and (max-width: 1019px) {
+      width: 100%;
+    }
     /* обертка для одной радиокнопки  */
     & .option {
-      margin-bottom: 0.3em;
-      font-size: 0.9em;
+      font-size: 0.7em;
+      margin-top: .2em;
 
-      @media screen and (max-width: 768px) {
-        display: flex;
-        align-items: center;
-        font-size: 1em;
-        font-weight: 450;
+      @media screen and (max-width: 1019px) {
+       align-items: center;
+        margin-bottom: .3em;
+        font-size: .8em;
       }
 
       & input {
-        @media screen and (max-width: 768px) {
-          margin-right: 0.4em;
+        
+        @media screen and (max-width: 1019px) {
+          margin-right: 0.2em;
         }
       }
+        /* горизонтальное/вертикальное и период */
       & label {
-        @media screen and (max-width: 768px) {
-          font-size: 1.1em;
-          margin-top: 0.3em;
+
+        @media screen and (max-width: 1019px) {
+          font-weight: 450;
         }
       }
     }
   }
+  /* & .period-wrap {
+    width: 54%;
+
+    @media screen and (max-width: 1019px) {
+      width: 100%;
+    }
+  }
+  & .format-wrap {
+    width: 54%;
+  } */
 }
 
 label {
@@ -119,13 +144,11 @@ input.radio {
   position: relative;
   width: 16px;
   height: 16px;
-  top: 2px;
+  top: 3px;
   margin-right: 0.2em;
   border-radius: 50%;
-  border: 0.5px solid black;
-  outline: 0.5px solid black;
+  border: 1px solid black;
   appearance: none;
-  cursor: pointer;
 
   &:focus:not(:focus-visible) {
     outline: 0.5px solid black;
@@ -134,7 +157,7 @@ input.radio {
   &:checked {
     border: 2px solid lightgray;
     background-color: black;
-    outline: 0.5px solid black;
+    outline: 0.5px solid black; */
     transition: 0.2s all linear;
   }
 }
@@ -144,55 +167,60 @@ input.radio {
 /* выпадающее меню "Вид меню" */
 #dropdown {
   display: flex;
-  justify-content: space-between;
-  height: 8em;
-  margin-top: 2em;
+  height: 2em;
+  margin: 2em 0 2em;
+  position: relative;
 
-  @media screen and (max-width: 768px) {
-    height: 10em;
+
+  @media screen and (max-width: 1019px) {
     flex-wrap: wrap;
     align-content: flex-start;
     margin-top: 0.8em;
+    margin: 2em 0 2em;
   }
 
   & nav {
-    width: 6.5em;
+    width: 100%;
     flex-direction: column;
-
-    @media screen and (max-width: 768px) {
-      width: 8em;
+    
+    @media screen and (max-width: 1019px) {
+      width: 100%;
     }
   }
 
   & p {
-    white-space: nowrap;
-    font-size: 0.7em;
-    font-weight: 580;
-    padding-top: 0.3em;
+    
+    &:first-of-type {
+      white-space: nowrap;
+      padding: 0;
+      font-weight: 500;
+      margin-right: .9em;
 
-    @media screen and (max-width: 768px) {
-      font-size: 0.75em;
-      margin-bottom: 0.2em;
+      @media screen and (max-width: 1019px) {
+        margin-bottom: .2em;
+      }
     }
   }
-  /* кнопка открытия меню */
+  /* кнопка открытия меню "Выберите" */
   & button {
     display: flex;
     justify-content: center;
-    width: -webkit-fill-available;
+    width: 100%;
     white-space: nowrap;
     font-size: 0.7em;
     font-weight: 580;
     padding: 0.3em 0;
-    border: 2px solid black;
+    border: 1px solid black;
+    
 
     border-radius: 0.4em;
     background-color: transparent;
     box-shadow: none;
     cursor: pointer;
 
-    @media screen and (max-width: 768px) {
-      width: 11.5em;
+    @media screen and (max-width: 1019px) {
+      padding: .5em 0 .65em;
+      width: 100%;
     }
 
     &.active {
@@ -222,19 +250,28 @@ input.radio {
 
   & ul#menuList {
     display: none;
-    margin-top: 0.1em;
+    position: absolute;
+    z-index: 1;
+    /* width: -webkit-fill-available; */
+    width: 53%;
 
+    @media screen and (max-width: 1019px) {
+      width: 100%;
+      width: -webkit-fill-available;
+    }
+    /* пункты Базовое / дальневосточное / без свинины / пицца-бар */
     & li {
       margin: 0;
-      margin-top: 0.2em;
-      padding: 0.3em 0 0.2em 0.2em;
-      font-size: 0.75em;
+      margin-top: 0.1em;
+      padding: 0.3em 0.1em 0.3em 0.2em;
+      font-size: 0.7em;
       background-color: rgb(242, 242, 242);
       border-radius: 0.3em;
       cursor: pointer;
-
-      @media screen and (max-width: 768px) {
-        margin-top: 0.2em;
+      
+      @media screen and (max-width: 1019px) {
+        font-size: .88em;
+        margin-top: 0.1em;
         padding: 0.4em 0 0.3em 0.2em;
       }
 
@@ -254,13 +291,17 @@ input.radio {
   }
   /* описание под каждым видом меню */
   & .description-wrap {
-    width: 6.5em;
     margin-top: 0.3em;
     padding: 0 0.1em 0 0.2em;
 
-    & #menu-description {
+    & p#menu-description {
+      font-size: .55em;
       font-weight: 450;
+      margin: 0;
       white-space: break-spaces;
+    }
+    @media screen and (max-width: 1019px) {
+      display: none;
     }
   }
 }
@@ -270,12 +311,30 @@ input.radio {
 /* Название "41 цикл" */
 .cycle-name {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  /* width: 8.5em; */
   margin: 1.5em 0;
-  width: 8em;
 
-  @media screen and (max-width: 768px) {
-    width: 7em;
+  @media screen and (max-width: 1019px) {
+    margin: 1em 0;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  & p {
+    &:first-of-type {
+      margin-right: 1em;
+
+      @media screen and (max-width: 1019px) {
+        margin-right: 0em;
+      }
+    }
+  }
+  & p {
+    &:last-of-type {
+      @media screen and (max-width: 1019px) {
+        font-size: .85em;
+      }
+    }
   }
 }
 
@@ -294,7 +353,6 @@ a.guide-link {
   }
 }
 
-
 /* ///////////////////////////////////////////////////////////////// */
 
 .active {
@@ -302,4 +360,43 @@ a.guide-link {
 }
 .hide {
   display: none;
+}
+.selected {
+  color: rgb(var(--ids__hover-RGB));
+  border-bottom: 1px solid rgba(var(--ids__hover-RGB), 0.2);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  & input {
+    cursor: not-allowed;
+  }
+  & label {
+    cursor: not-allowed;
+  }
+}
+.to-connect {
+  /* background-color: red; */
+  
+  outline: 4px solid rgba(var(--ids__hover-RGB), 1);
+  border-radius: 0.4em;
+  position: relative;
+  & p.title {
+
+    &:after {
+      content: 'Нужно подключить';
+      display: inline-block;
+      position: absolute;
+      background-color: rgba(var(--ids__background-RGB), .7);
+      right: 2em;
+      /* margin-left: .5em;
+      margin-top: .6em; */
+      padding: 0 .3em;
+      font-size: .45em;
+      font-weight: 600;
+      width: 7em;
+      color: rgba(var(--ids__hover-RGB), 1);
+    }
+  }
 }
