@@ -139,16 +139,6 @@ p.title {
       width: 100%;
     }
   }
-  /* & .period-wrap {
-    width: 54%;
-
-    @media screen and (max-width: 1019px) {
-      width: 100%;
-    }
-  }
-  & .format-wrap {
-    width: 54%;
-  } */
 }
 
 label {
