@@ -95,7 +95,8 @@ p.title {
     /* width: 54%; */
     margin-left: 1.3em;
     @media screen and (max-width: 1019px) {
-      width: 100%;
+      margin-left: 0;
+      /* width: 100%; */
     }
     /* обертка для одной радиокнопки  */
     & .option {
@@ -127,7 +128,7 @@ p.title {
     
     width: 16vw;
     @media screen and (max-width: 1019px) {
-      margin-left: 0;
+      /* margin-left: 0; */
       width: 100%;
     }
   }
@@ -135,8 +136,8 @@ p.title {
     
     width: 12vw;
     @media screen and (max-width: 1019px) {
-      margin-left: 0;
-      width: 100%;
+      /* margin-left: 0; */
+      width: 90%;
     }
   }
 }
