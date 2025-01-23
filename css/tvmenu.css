@@ -44,7 +44,7 @@ p.title {
   margin-left: .5em;
   border-radius: 0.4em;
   max-height: fit-content;
-  width: 23%;
+  width: 24%;
 
   @media screen and (max-width: 1019px) {
     width: 50%;
@@ -63,20 +63,20 @@ p.title {
   }
 
   & p {
-    font-size: 1em;
+    font-size: .9em;
     font-weight: 500;
    
 
-    @media screen and (max-width: 1019px) {
+    /* @media screen and (max-width: 1019px) {
       font-size: 0.9em;
-    }
+    } */
   }
 
   /* // формат и период */
   & .fieldset {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: baseline;
     padding: 0;
     border: none;
@@ -92,14 +92,14 @@ p.title {
   
   /* обертка для двух радиокнопок (черных кружков) и текста  */
   & .option-wrap {  
-    width: 54%;
+    /* width: 54%; */
 
     @media screen and (max-width: 1019px) {
       width: 100%;
     }
     /* обертка для одной радиокнопки  */
     & .option {
-      font-size: 0.7em;
+      font-size: 0.9em;
       margin-top: .2em;
 
       @media screen and (max-width: 1019px) {
@@ -121,6 +121,19 @@ p.title {
           font-weight: 450;
         }
       }
+    }
+  }
+  & .format-wrap {
+    margin-left: 1.4em;
+    @media screen and (max-width: 1019px) {
+      margin-left: 0;
+    }
+  }
+  & .period-wrap {
+    margin-left: 1.4em;
+    max-width: 56%;
+    @media screen and (max-width: 1019px) {
+      margin-left: 0;
     }
   }
   /* & .period-wrap {
@@ -167,6 +180,7 @@ input.radio {
 /* выпадающее меню "Вид меню" */
 #dropdown {
   display: flex;
+  /* align-items: baseline; */
   height: 2em;
   margin: 2em 0 2em;
   position: relative;
@@ -205,15 +219,13 @@ input.radio {
   & button {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 10em;
     white-space: nowrap;
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-weight: 580;
-    padding: 0.3em 0;
+    padding: 0.3em 5.06em;
     border: 1px solid black;
-    
-
-    border-radius: 0.4em;
+    border-radius: 1em;
     background-color: transparent;
     box-shadow: none;
     cursor: pointer;
@@ -253,7 +265,7 @@ input.radio {
     position: absolute;
     z-index: 1;
     /* width: -webkit-fill-available; */
-    width: 53%;
+    /* width: 62%; */
 
     @media screen and (max-width: 1019px) {
       width: 100%;
@@ -262,11 +274,11 @@ input.radio {
     /* пункты Базовое / дальневосточное / без свинины / пицца-бар */
     & li {
       margin: 0;
-      margin-top: 0.1em;
-      padding: 0.3em 0.1em 0.3em 0.2em;
-      font-size: 0.7em;
+      margin-top: 0.06em;
+      padding: 0.3em 0.4em 0.35em 0.3em;
+      font-size: 0.9em;
       background-color: rgb(242, 242, 242);
-      border-radius: 0.3em;
+      border-radius: 1em;
       cursor: pointer;
       
       @media screen and (max-width: 1019px) {
