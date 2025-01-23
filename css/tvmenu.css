@@ -93,7 +93,7 @@ p.title {
   /* обертка для двух радиокнопок (черных кружков) и текста  */
   & .option-wrap {  
     /* width: 54%; */
-
+    margin-left: 1.3em;
     @media screen and (max-width: 1019px) {
       width: 100%;
     }
@@ -124,16 +124,19 @@ p.title {
     }
   }
   & .format-wrap {
-    margin-left: 1.4em;
+    
+    width: 16vw;
     @media screen and (max-width: 1019px) {
       margin-left: 0;
+      width: 100%;
     }
   }
   & .period-wrap {
-    margin-left: 1.4em;
-    max-width: 56%;
+    
+    width: 12vw;
     @media screen and (max-width: 1019px) {
       margin-left: 0;
+      width: 100%;
     }
   }
   /* & .period-wrap {
@@ -231,8 +234,8 @@ input.radio {
     cursor: pointer;
 
     @media screen and (max-width: 1019px) {
-      padding: .5em 0 .65em;
-      width: 100%;
+      padding: .3em 0.5em .4em;
+      /* width: 10em; */
     }
 
     &.active {
@@ -323,13 +326,12 @@ input.radio {
 /* Название "41 цикл" */
 .cycle-name {
   display: flex;
-  /* justify-content: space-between; */
-  /* width: 8.5em; */
+  
   margin: 1.5em 0;
 
   @media screen and (max-width: 1019px) {
     margin: 1em 0;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: baseline;
   }
   & p {
@@ -337,7 +339,7 @@ input.radio {
       margin-right: 1em;
 
       @media screen and (max-width: 1019px) {
-        margin-right: 0em;
+        margin-right: .5em;
       }
     }
   }
