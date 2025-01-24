@@ -1,755 +1,898 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/colors.css" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/settings.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/ids.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
-  <link rel="stylesheet" href="css/tvmenu.css" />
-  <link rel="stylesheet" href="/tv-menu-monitor.github.io/css/tvmenu.css" />
-  <title>TV Menu</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/ids.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/tvmenu.css" />
+    <link rel="stylesheet" href="/tv-menu-monitor.github.io/css/tvmenu.css" />
+    <title>TV Menu</title>
+  </head>
 
-<body class="ids">
-  <header></header>
-  <main>
-    <div class="ids__wrapper wide">
-      <div class="ids__space XS"></div>
-      <!-- <p>до 12:00</p> -->
-      <!-- wrap для контента и фильтра  -->
-      <div class="wrapper-content-filter">
-        
-        <!-- //////////////////////// БАЗОВОЕ //////////////////////// -->
-        <!-- Базовое - Горизонтальные макеты - Настоящий период -->
-        <div class="wrapper-menu-content"  data-type="base" data-format="horizontal" data-period="present">
+  <body class="ids">
+    <header></header>
+                            <!-- Порядок: 
+                            1. Базовое  
+                              - горизонтальное (настоящий период)
+                              - горизонтальное (предыдущий)
+                              - вертикальное (настоящий)
+                              - вертикальное (предыдущий)
+                            2. Дальневосточное
+                            3. Халяль 
+                            4. Пицца-бар  -->
+
+              <!-- плашка "Нужно подключить" - добавьте класс (после ids__sequence-item)
+              to-connect-h (для горизонтальных)
+              to-connect-v (для вертикальных) -->
+    <main>
+      <div class="ids__wrapper wide">
+        <div class="ids__space XS"></div>
+        <div class="wrapper-content-filter">
+
+          <!-- //////////////////////// БАЗОВОЕ //////////////////////// -->
+          <!-- Базовое - Горизонтальные макеты - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="basic"
+            data-format="horizontal"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item to-connect-h">
+                <img src="./img/basic-horizontal/H-1-1.jpg" />
+                <p class="title">basic present</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-1-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-2-1.jpg" />
+                <p class="title">J-2.1-Defg-Combo</p>
+              </div>
+              <div class="ids__sequence-item to-connect-h">
+                <img src="./img/basic-horizontal/H-2-2.jpg" />
+                <p class="title">L-3.1-HIJ-Combo</p>
+              </div>
+            </div>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-3-1.jpg" />
+                <p class="title">A-5.1-Opqr-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-3-2.jpg" />
+                <p class="title">Н-2.1-Brfst-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-4-1.jpg" />
+                <p class="title">Н-2.1-Brfst-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-horizontal/H-4-2.jpg" />
+                <p class="title">Н-2.1-Brfst-Combo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Базовое - Горизонтальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="basic"
+            data-format="horizontal"
+            data-period="previous"
+          >
           <p>до 12:00</p>
           <div class="ids__sequence M gap-S">
-            <div class="ids__sequence-item to-connect">
-                <img src="./img/base-horizontal/H-1-1.jpg"/>
-                <p class="title">base present</p>
+            <div class="ids__sequence-item to-connect-h">
+              <img src="./img/basic-horizontal/H-1-1.jpg" />
+              <p class="title">basic present</p>
             </div>
             <div class="ids__sequence-item">
-                <img src="./img/base-horizontal/H-1-2.jpg"/>
-                <p class="title">Н-1.1-Abc-Combo</p>
+              <img src="./img/basic-horizontal/H-1-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
             </div>
             <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-2-1.jpg"/>
+              <img src="./img/basic-horizontal/H-2-1.jpg" />
               <p class="title">J-2.1-Defg-Combo</p>
             </div>
-            <div class="ids__sequence-item to-connect">
-              <img src="./img/base-horizontal/H-2-2.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
+            <div class="ids__sequence-item to-connect-h">
+              <img src="./img/basic-horizontal/H-2-2.jpg" />
+              <p class="title">L-3.1-HIJ-Combo</p>
             </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-3-1.jpg"/>
-                <p class="title">A-5.1-Opqr-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-3-2.jpg"/>
-                <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-4-1.jpg"/>
-                <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-4-2.jpg"/>
-              <p class="title">Н-2.1-Brfst-Combo</p>
-            </div> 
-
           </div>
-        </div> 
-
-        <!-- Базовое - Горизонтальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="base" data-format="horizontal" data-period="previous">
-          <p>до 12:00</p>
+          <p class="after-12">после 12:00</p>
           <div class="ids__sequence M gap-S">
             <div class="ids__sequence-item">
-                <img src="./img/base-horizontal/H-1-1.jpg"/>
-                <p class="title">base previous</p>
+              <img src="./img/basic-horizontal/H-3-1.jpg" />
+              <p class="title">A-5.1-Opqr-Combo</p>
             </div>
             <div class="ids__sequence-item">
-                <img src="./img/base-horizontal/H-1-2.jpg"/>
+              <img src="./img/basic-horizontal/H-3-2.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-horizontal/H-4-1.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-horizontal/H-4-2.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+          </div>
+          </div>
+
+          <!-- Базовое - Вертикальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="basic"
+            data-format="vertical"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item to-connect-h">
+                <img src="./img/basic-vertical/V-1-1.jpg" />
+                <p class="title">basic present</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-1-2.jpg" />
                 <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-3-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-3-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-4-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              
             </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-2-1.jpg"/>
-              <p class="title">J-2.1-Defg-Combo</p>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-4-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-5-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-5-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/basic-vertical/V-6.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
             </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-2-2.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-3-1.jpg"/>
-                <p class="title">A-5.1-Opqr-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-3-2.jpg"/>
-                <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-4-1.jpg"/>
-                <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/base-horizontal/H-4-2.jpg"/>
-              <p class="title">Н-2.1-Brfst-Combo</p>
-            </div> 
-
           </div>
-        </div>
 
-        <!-- Базовое - Вертикальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="base" data-format="vertical" data-period="present">
+          <!-- Базовое - Вертикальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="basic"
+            data-format="vertical"
+            data-period="previous"
+          >
           <p>до 12:00</p>
           <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item to-connect">  
-              <img src="./img/base-vertical/V-1-1.jpg"/>
-              <p class="title">base present</p>
+            <div class="ids__sequence-item to-connect-h">
+              <img src="./img/basic-vertical/V-1-1.jpg" />
+              <p class="title">basic present</p>
             </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-
-          </div>
-        </div>
-
-        <!-- Базовое - Вертикальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="base" data-format="vertical" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-1-1.jpg"/>
-              <p class="title">base previous</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/base-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-
-          </div>
-        </div>
-
-
-
-        <!-- //////////////////////// Дальневосточное //////////////////////-->
-        <!-- Дальневосточное - Горизонтальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="far-east" data-format="horizontal" data-period="present">
-          <p>до 12:00</p>
-          <div class="ids__sequence M gap-S">
             <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+              <img src="./img/basic-vertical/V-1-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-3-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-3-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-4-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            
+          </div>
+          <p class="after-12">после 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-4-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-5-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-5-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/basic-vertical/V-6.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+          <!-- //////////////////////// Дальневосточное //////////////////////-->
+          <!-- Дальневосточное - Горизонтальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="far-east"
+            data-format="horizontal"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-1-1.jpg" />
                 <p class="title">far-east present</p>
-            </div>
-            <div class="ids__sequence-item">
-                <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">Дальневосточное</p> 
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-1-2.jpg" />
+                <p class="title">Дальневосточное</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-2-1.jpg" />
                 <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-                <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-2-2.jpg" />
                 <p class="title">L-3.1-HIJ-Combo</p>
+              </div>
             </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-3-1.jpg" />
                 <p class="title">A-5.1-Opqr-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-3-2.jpg" />
                 <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-              <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-        
-        <!-- Дальневосточное - Горизонтальные - Предыдущий период -->
-        <div class="wrapper-menu-content previous" data-type="far-east" data-format="horizontal" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence M gap-S">
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">far-east previous</p>
-            </div>
-            <div class="ids__sequence-item">
-                <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">Дальневосточное</p> 
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-                <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-                <p class="title">A-5.1-Opqr-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-4-1.jpg" />
                 <p class="title">Н-2.1-Brfst-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-horizontal/H-4-2.jpg" />
+                <p class="title">Н-2.1-Brfst-Combo</p>
+              </div>
             </div>
-            <div class="ids__sequence-item">
-              <img src="./img/far-east-horizontal/H-1-1.jpg"/>
-              <p class="title">Н-2.1-Brfst-Combo</p>
-            </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
           </div>
-        </div>
 
-        <!-- Дальневосточное - Вертикальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="far-east" data-format="vertical" data-period="present">
+          <!-- Дальневосточное - Горизонтальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content previous"
+            data-type="far-east"
+            data-format="horizontal"
+            data-period="previous"
+          >
           <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-1-1.jpg"/>
+          <div class="ids__sequence M gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-1-1.jpg" />
               <p class="title">far-east present</p>
             </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-1-2.jpg" />
+              <p class="title">Дальневосточное</p>
             </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-2-1.jpg" />
+              <p class="title">J-2.1-Defg-Combo</p>
             </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-2-2.jpg" />
+              <p class="title">L-3.1-HIJ-Combo</p>
             </div>
           </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-        <!-- Дальневосточное - Вертикальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="far-east" data-format="vertical" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-1-1.jpg"/>
-              <p class="title">far-east previous</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/far-east-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-
-
-        
-        <!-- //////////////////////// ХАЛЯЛЬ //////////////////////// -->
-        <!-- Без свинины - Горизонтальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="no-pork" data-format="horizontal" data-period="present">
-          <p>до 12:00</p>
+          <p class="after-12">после 12:00</p>
           <div class="ids__sequence M gap-S">
             <div class="ids__sequence-item">
-                <img src="./img/halal-horizontal/H-1-1.jpg"/>
+              <img src="./img/far-east-horizontal/H-3-1.jpg" />
+              <p class="title">A-5.1-Opqr-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-3-2.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-4-1.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-horizontal/H-4-2.jpg" />
+              <p class="title">Н-2.1-Brfst-Combo</p>
+            </div>
+          </div>
+          </div>
+
+          <!-- Дальневосточное - Вертикальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="far-east"
+            data-format="vertical"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-1-1.jpg" />
+                <p class="title">far-east present</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-1-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-3-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-3-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-4-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              
+            </div>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-4-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-5-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-5-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/far-east-vertical/V-6.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Дальневосточное - Вертикальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="far-east"
+            data-format="vertical"
+            data-period="previous"
+          >
+          <p>до 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-1-1.jpg" />
+              <p class="title">far-east present</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-1-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-3-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-3-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-4-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            
+          </div>
+          <p class="after-12">после 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-4-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-5-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-5-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/far-east-vertical/V-6.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+          <!-- /////////////////// ХАЛЯЛЬ Без свинины //////////////////// -->
+          <!-- Без свинины - Горизонтальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="no-pork"
+            data-format="horizontal"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-1-1.jpg" />
                 <p class="title">no-pork present</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-1-2.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-1-2.jpg" />
                 <p class="title">Без свинины</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-2-1.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-2-1.jpg" />
                 <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-2-2.jpg"/>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-2-2.jpg" />
                 <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-3-1.jpg"/>
-              <p class="title">no-pork present</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-3-2.jpg"/>
-                <p class="title">Без свинины</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-4-1.jpg"/>
-                <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-4-2.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-        
-        <!-- Без свинины - Горизонтальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="no-pork" data-format="horizontal" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence M gap-S">
-            <div class="ids__sequence-item">
-                <img src="./img/halal-horizontal/H-1-1.jpg"/>
-                <p class="title">no-pork previous</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-1-2.jpg"/>
-                <p class="title">Без свинины</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-2-1.jpg"/>
-                <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-2-2.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-3-1.jpg"/>
-              <p class="title">no-pork present</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-3-2.jpg"/>
-                <p class="title">Без свинины</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-4-1.jpg"/>
-                <p class="title">J-2.1-Defg-Combo</p>
-            </div>
-            <div class="ids__sequence-item">
-              <img src="./img/halal-horizontal/H-4-2.jpg"/>
-                <p class="title">L-3.1-HIJ-Combo</p>
-            </div>
-          </div> 
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-        <!-- Без свинины - Вертикальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="no-pork" data-format="vertical" data-period="present">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-1-1.jpg"/>
-              <p class="title">no-pork present</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-        <!-- Без свинины - Вертикальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="no-pork" data-format="vertical" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-1-1.jpg"/>
-              <p class="title">no-pork previous</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-1-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-3-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-3-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-4-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-4-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-5-1.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-5-2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/halal-vertical/V-6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-
-        <!-- //////////////////////// бар ЗАВТРАКИ //////////////////////// -->
-
-        <!-- Пицца-бар - Вертикальные - Настоящий период -->
-        <div class="wrapper-menu-content" data-type="pizza-bar" data-format="vertical" data-period="present">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.1.jpg"/>
-              <p class="title">pizza-bar present</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.3.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.4.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.5.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.7.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-        <!-- Пицца-бар - Вертикальные - Предыдущий период -->
-        <div class="wrapper-menu-content" data-type="pizza-bar" data-format="vertical" data-period="previous">
-          <p>до 12:00</p>
-          <div class="ids__sequence S gap-S">
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.1.jpg"/>
-              <p class="title">pizza-bar previous</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.2.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.3.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.4.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.5.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.6.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-            <div class="ids__sequence-item">  
-              <img src="./img/breakfast-vertical/V–1.7.jpg"/>
-              <p class="title">Н-1.1-Abc-Combo</p>
-            </div>
-          </div>
-          <p>после 12:00</p>
-          <div class="ids__sequence M gap-S">
-            
-          </div>
-        </div>
-
-
-
-        
-        <!-- ФИЛЬТР МЕНЮ  -->
-        <div class="filter-menu">
-          <h1>Гайд по меню на&nbsp;ТВ-бордах</h1>
-          <p>Текст о том куда вы попали и как пользоваться этим сайтом. Даша напишет что-то прекрасное и понятное</p>
-          
-
-          <!-- выпадающее меню -->
-          <div id="dropdown">
-            <p class="legend">Вид меню</p>
-            <!-- <label for="menuList">Вид меню</label> -->
-            <nav>
-              <button id="openMenu">
-                <span class="arrow"></span>
-                Выберите
-              </button>
-              <ul id="menuList">
-                <li data-filter="base" data-title="Базовое" data-description="description for Базовое menu">Базовое</li>
-                <li data-filter="far-east" data-title="Дальневосточное" data-description="description for Дальневосточное menu u know">Дальневосточное</li>
-                <li data-filter="no-pork" data-title="Без свинины" data-description="description for No Pork menu">Без свинины</li>
-                <li data-filter="pizza-bar" data-title="Пицца-бар" data-description="description for Пицца-бар menu drink margarita eat margherita">Пицца-бар</li>
-              </ul>
-              
-              <div class="description-wrap">
-                <p id="menu-description"></p>
               </div>
               
-            </nav>
+            </div>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence M gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-3-1.jpg" />
+                <p class="title">no-pork present</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-3-2.jpg" />
+                <p class="title">Без свинины</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-4-1.jpg" />
+                <p class="title">J-2.1-Defg-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-horizontal/H-4-2.jpg" />
+                <p class="title">L-3.1-HIJ-Combo</p>
+              </div>
+            </div>
           </div>
-          
-          
-          
 
-          <!-- выбор формата меню (Горизонтальное \ Верткальное ) -->
-          <form id="format">
-            <div class="fieldset">
-              <p class="legend">Формат</p>
-              <div class="option-wrap format-wrap">
-                <div class="option" id="horizontalOption">
-                  <input class="radio" type="radio" id="horizontal" name="imgFormat" value="horizontal" checked />
-                  <label for="horizontal">Горизонтальное</label>
-                </div>
-                <div class="option">
-                  <input class="radio" type="radio" id="vertical" name="imgFormat" value="vertical" />
-                  <label for="vertical">Верткальное</label>
-                </div>
-              </div>
+          <!-- Без свинины - Горизонтальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="no-pork"
+            data-format="horizontal"
+            data-period="previous"
+          >
+          <p>до 12:00</p>
+          <div class="ids__sequence M gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-1-1.jpg" />
+              <p class="title">no-pork present</p>
             </div>
-          </form>
-          
-          
-          <div class="cycle-name">
-            <p>Название</p>
-            <p>41 цикл</p>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-1-2.jpg" />
+              <p class="title">Без свинины</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-2-1.jpg" />
+              <p class="title">J-2.1-Defg-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-2-2.jpg" />
+              <p class="title">L-3.1-HIJ-Combo</p>
+            </div>
+            
           </div>
-          
-          <!-- выбор периода (нынешний \ предыдущий ) -->
-          
-          <form id="period">
-            <div class="fieldset">
-              <p class="legend">Период</p>
-              <div class="option-wrap period-wrap">
-                <div class="option">
-                  <input class="radio" type="radio" id="previous" name="period" value="previous" />
-                  <label for="previous">Предыдущий 04.02–06.05</label>
-                </div>
-                <div class="option">
-                  <input class="radio" type="radio" id="present" name="period" value="present" checked/>
-                  <label for="present">Настоящий 04.02–06.05</label>
-                </div>
+          <p class="after-12">после 12:00</p>
+          <div class="ids__sequence M gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-3-1.jpg" />
+              <p class="title">no-pork present</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-3-2.jpg" />
+              <p class="title">Без свинины</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-4-1.jpg" />
+              <p class="title">J-2.1-Defg-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-horizontal/H-4-2.jpg" />
+              <p class="title">L-3.1-HIJ-Combo</p>
+            </div>
+          </div>
+          </div>
+
+          <!-- Без свинины - Вертикальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="no-pork"
+            data-format="vertical"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-1-1.jpg" />
+                <p class="title">no-pork present</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-1-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-3-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-3-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-4-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              
+            </div>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-4-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-5-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-5-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/halal-vertical/V-6.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
               </div>
             </div>
-          </form>
-          <div class="ids__space S"></div>
-          <a class="guide-link" href="/" target="_blank">Гайд «Что делать если у вас нестандартное количество экранов?»</a>
+          </div>
+
+          <!-- Без свинины - Вертикальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="no-pork"
+            data-format="vertical"
+            data-period="previous"
+          >
+          <p>до 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-1-1.jpg" />
+              <p class="title">no-pork present</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-1-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-3-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-3-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-4-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            
+          </div>
+          <p class="after-12">после 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-4-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-5-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-5-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/halal-vertical/V-6.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+          
+          <!-- //////////////////////// Пицца-бар //////////////////////// -->
+
+          <!-- Пицца-бар - Вертикальные - Настоящий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="pizza-bar"
+            data-format="vertical"
+            data-period="present"
+          >
+            <p>до 12:00</p>
+            <div class="ids__sequence S gap-S">
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-1-1.jpg" />
+                <p class="title">pizza-bar</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-1-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-4-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-4-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+            </div>
+            <p class="after-12">после 12:00</p>
+            <div class="ids__sequence S gap-S">
+              
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-5-1.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+              <div class="ids__sequence-item">
+                <img src="./img/pizza-bar-vertical/V-5-2.jpg" />
+                <p class="title">Н-1.1-Abc-Combo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Пицца-бар - Вертикальные - Предыдущий период -->
+          <div
+            class="wrapper-menu-content"
+            data-type="pizza-bar"
+            data-format="vertical"
+            data-period="previous"
+          >
+          <p>до 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-1-1.jpg" />
+              <p class="title">pizza-bar</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-1-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-4-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+          </div>
+          <p class="after-12">после 12:00</p>
+          <div class="ids__sequence S gap-S">
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-4-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-5-1.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+            <div class="ids__sequence-item">
+              <img src="./img/pizza-bar-vertical/V-5-2.jpg" />
+              <p class="title">Н-1.1-Abc-Combo</p>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+          <!-- ФИЛЬТР МЕНЮ  -->
+          <div class="filter-menu">
+            <h1>Гайд по меню на&nbsp;ТВ-бордах</h1>
+            <p>
+              Текст о том куда вы попали и как пользоваться этим сайтом. Даша
+              напишет что-то прекрасное и понятное
+            </p>
+
+            <!-- выпадающее меню -->
+            <div id="dropdown">
+              <p class="legend">Вид меню</p>
+              <!-- <label for="menuList">Вид меню</label> -->
+              <nav>
+                <button id="openMenu">
+                  <span class="arrow"></span>
+                  Выберите
+                </button>
+                <ul id="menuList">
+                  <li
+                    data-filter="basic"
+                    data-title="Базовое"
+                    data-description="description for Базовое menu"
+                  >
+                    Базовое
+                  </li>
+                  <li
+                    data-filter="far-east"
+                    data-title="Дальневосточное"
+                    data-description="description for Дальневосточное menu u know"
+                  >
+                    Дальневосточное
+                  </li>
+                  <li
+                    data-filter="no-pork"
+                    data-title="Без свинины"
+                    data-description="description for No Pork menu"
+                  >
+                    Без свинины
+                  </li>
+                  <li
+                    data-filter="pizza-bar"
+                    data-title="Пицца-бар"
+                    data-description="description for Пицца-бар menu drink margarita eat margherita"
+                  >
+                    Пицца-бар
+                  </li>
+                </ul>
+
+                <div class="description-wrap">
+                  <p id="menu-description"></p>
+                </div>
+              </nav>
+            </div>
+
+            <!-- выбор формата меню (Горизонтальное \ Верткальное ) -->
+            <form id="format">
+              <div class="fieldset">
+                <p class="legend">Формат</p>
+                <div class="option-wrap format-wrap">
+                  <div class="option" id="horizontalOption">
+                    <input
+                      class="radio"
+                      type="radio"
+                      id="horizontal"
+                      name="imgFormat"
+                      value="horizontal"
+                      checked
+                    />
+                    <label for="horizontal">Горизонтальное</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      class="radio"
+                      type="radio"
+                      id="vertical"
+                      name="imgFormat"
+                      value="vertical"
+                    />
+                    <label for="vertical">Верткальное</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="cycle-name">
+              <p>Название</p>
+              <p>41 цикл</p>
+            </div>
+
+            <!-- выбор периода (нынешний \ предыдущий ) -->
+
+            <form id="period">
+              <div class="fieldset">
+                <p class="legend">Период</p>
+                <div class="option-wrap period-wrap">
+                  <div class="option">
+                    <input
+                      class="radio"
+                      type="radio"
+                      id="previous"
+                      name="period"
+                      value="previous"
+                    />
+                    <label for="previous">Предыдущий 04.02–06.05</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      class="radio"
+                      type="radio"
+                      id="present"
+                      name="period"
+                      value="present"
+                      checked
+                    />
+                    <label for="present">Настоящий 04.02–06.05</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="ids__space S"></div>
+            <a class="guide-link" href="/" target="_blank"
+              >Гайд «Что делать если у вас нестандартное количество экранов?»</a
+            >
+          </div>
         </div>
       </div>
-      
-    </div>
-  </main>
-  <script src="index.js"></script>
-</body>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>

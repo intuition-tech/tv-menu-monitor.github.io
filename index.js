@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // показать / скрыть макеты
   function filterMenu() {
-      // <div id="dropdown"> data-filter="base"/"far-east"/"no-pork"/"pizza-bar"
-      const selectedFilter = document.querySelector('#menuList li[data-selected]')?.dataset.filter || 'base';
+      // <div id="dropdown"> data-filter="basic"/"far-east"/"no-pork"/"pizza-bar"
+      const selectedFilter = document.querySelector('#menuList li[data-selected]')?.dataset.filter || 'basic';
     
       // <form id="format"> "horizontal"/vertical
       const selectedFormat = document.querySelector('input[name="imgFormat"]:checked').value;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       menuItems.forEach(item => {
         //<div class="wrapper-menu-content"
-        // data-type="base"/"far-east"/"no-pork"/"pizza-bar"
+        // data-type="basic"/"far-east"/"no-pork"/"pizza-bar"
         const itemType = item.dataset.type;
         // data-format="horizontal"/vertical
         const itemFormat = item.dataset.format;
