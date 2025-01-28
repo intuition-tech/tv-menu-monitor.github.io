@@ -29,18 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuListItems = document.querySelectorAll('#menuList li');
   const menuDescription = document.getElementById('menu-description');//<p id="menu-description">
 
+
+  // восстановление выбранного при загрузке страницы
+  restoreSelectedFormat(); //  формат
+  restoreSelectedPeriod(); //  период
+  restoreSelectedMenu(); // вид меню 
+  filterMenu(); // обновление фильтрации
   
+  // открытие / закрытие меню
   function toggleMenu(forceClose = false) {
     const isActive = menuList.classList.contains('active');
     
     if (forceClose || isActive) {
-      // Закрываем меню
+      // закрытие 
       menuList.classList.remove('active');
       openMenuButton.classList.remove('active');
       menuDescription.classList.add('active');
 
     } else {
-      // Открываем меню
+      // открытие 
       menuList.classList.add('active');
       openMenuButton.classList.add('active');
       menuDescription.classList.add('hide');
@@ -50,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // клик по кнопке "Выберите"
   openMenuButton.addEventListener("click", () => toggleMenu());
   
-  // Закрыть меню при клике вне его
+  // закрытие меню при клике вне его
   document.addEventListener('mouseup', (e) => {
     if (!menuList.contains(e.target) && e.target !== openMenuButton) {
       toggleMenu(true);
@@ -78,13 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // отключение Горизонтального формата для Пицца-Бар
       if (selectedFilter === 'pizza-bar') {
         verticalButton.checked = true;
-        // selectedFormat = 'vertical';
         horizontalOption.classList.add('disabled');
         horizontalButton.disabled = true; 
       } else {
         horizontalOption.classList.remove('disabled');
-        horizontalButton.disabled = false; // Разрешаем выбор horizontal
+        horizontalButton.disabled = false;
       }
+
       menuItems.forEach(item => {
         //<div class="wrapper-menu-content"
         // data-type="basic"/"far-east"/"no-pork"/"pizza-bar"
@@ -94,11 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // data-period="present"/previous
         const itemPeriod = item.dataset.period;
         
-
           // показать меню в соотв. с выбранными параметрами
           if (itemType === selectedFilter && itemFormat === selectedFormat && itemPeriod === selectedPeriod) {
             item.style.display = 'block'; 
-            
             
             // Черно-белый фильтр для макетов ПРЕДЫДУЩЕГО периода
             if (itemPeriod === 'previous') { 
@@ -108,42 +113,127 @@ document.addEventListener('DOMContentLoaded', () => {
           } else if (selectedFilter === 'pizza-bar' && selectedFormat === 'horizontal' && itemPeriod === selectedPeriod) {
             filterMenu(); 
           }  else {
-              item.style.display = 'none'; // Скрываем элемент 
+              item.style.display = 'none'; // скрыть элемент 
           }
           
       }); 
 
   }
   
-  
-
+  // DROPDOWN MENU
   // клик по пункту Базовое/ Дальневосточное/ Без свинины/ Пицца-бар
   menuListItems.forEach(item => {
     const itemTitle = item.dataset.title;
     const itemDescription = item.dataset.description;
     
     item.addEventListener('click', () => {
-        menuListItems.forEach(i => i.removeAttribute('data-selected'));
-        item.setAttribute('data-selected', 'true');
-
-        if (itemTitle) {
-          openMenuButton.innerText = itemTitle;
-          menuDescription.innerText = itemDescription;
-          menuDescription.classList.remove('hide');
-          
-        } 
-        
-        filterMenu();
-        toggleMenu(true); // Закрытие меню после выбора
+      saveSelectedMenu(item.dataset.filter);
+      menuListItems.forEach(i => i.removeAttribute('data-selected'));
+      item.setAttribute('data-selected', 'true');
+      
+      if (itemTitle) {
+        openMenuButton.innerText = itemTitle;
+        menuDescription.innerText = itemDescription;
+        menuDescription.classList.remove('hide');   
+      } 
+      
+      filterMenu();
+      toggleMenu(true); // закрытие меню после выбора
     });
   });
+  // сохранение выбранногов localStorage
+  function saveSelectedMenu(filter) {
+    localStorage.setItem('selectedMenu', filter);
+  }
+  // восстановление выбранного из localStorage
+  function restoreSelectedMenu() {
+    const savedFilter = localStorage.getItem('selectedMenu');
+    if (savedFilter) {
+      const selectedItem = document.querySelector(`#menuList li[data-filter="${savedFilter}"]`);
+      if (selectedItem) {
+        // Устанавливаем атрибут data-selected
+        menuListItems.forEach(item => item.removeAttribute('data-selected'));
+        selectedItem.setAttribute('data-selected', 'true');
+
+        // обновление текста кнопки и описания
+        openMenuButton.innerText = selectedItem.dataset.title;
+        menuDescription.innerText = selectedItem.dataset.description;
+      }
+    }
+  }
 
   // Обработчик событий для радиокнопок формата и периода
     document.querySelectorAll('input[name="imgFormat"], input[name="period"]').forEach(input => {
       input.addEventListener('change', filterMenu);
   });
   
-  
-
   filterMenu();
 });
+
+
+////////////////////////// Запоминание выборов ////////////
+
+// Горизонтальный / Вертикальный формат
+// сохранение выбранного в Local Storage
+function saveSelectedFormat() {
+  const selectedFormat = document.querySelector('input[name="imgFormat"]:checked');
+  if (selectedFormat) {
+      localStorage.setItem('selectedFormat', selectedFormat.value);
+  }
+}
+
+// восстановление выбранного из Local Storage
+function restoreSelectedFormat() {
+  const savedFormat = localStorage.getItem('selectedFormat');
+  if (savedFormat) {
+      const radioButton = document.querySelector(`input[name="imgFormat"][value="${savedFormat}"]`);
+      if (radioButton) {
+          radioButton.checked = true;
+      }
+  }
+}
+
+
+
+// Нынешний / Предыдущий период 
+// сохранение выбранного в Local Storage
+function saveSelectedPeriod() {
+  const selectedPeriod = document.querySelector('input[name="period"]:checked');
+  if (selectedPeriod) {
+      localStorage.setItem('selectedPeriod', selectedPeriod.value);
+  }
+}
+
+// восстановление выбранного из Local Storage
+function restoreSelectedPeriod() {
+  const savedPeriod = localStorage.getItem('selectedPeriod');
+  if (savedPeriod) {
+      const radioButton = document.querySelector(`input[name="period"][value="${savedPeriod}"]`);
+      if (radioButton) {
+          radioButton.checked = true;
+      }
+  }
+}
+
+// сохранение выбранного при изменении
+//.... Формат
+const radioButtonsFormat = document.querySelectorAll('input[name="imgFormat"]');
+radioButtonsFormat.forEach(radio => {
+  radio.addEventListener('change', () => {
+    saveSelectedFormat(); // сохранение выбранного формата
+    filterMenu(); // обновление фильтрации при изменении
+    console.log(radioButtonsFormat);
+  });
+});
+//.... Период
+const radioButtonsPeriod = document.querySelectorAll('input[name="period"]');
+radioButtonsPeriod.forEach(radio => {
+  radio.addEventListener('change', () => {
+    saveSelectedPeriod(); // сохранение выбранного периода
+    filterMenu(); // обновление фильтрации при изменении
+    console.log(radioButtonsPeriod)
+  });
+});
+
+
+
