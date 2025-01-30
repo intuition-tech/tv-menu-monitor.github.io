@@ -23,6 +23,55 @@
       margin-top: 1.5em;
     }
   }
+
+  & .to-connect-h {
+    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
+    border-radius: 0.4em;
+    position: relative;
+   
+    & p.title {
+  
+      &:after {
+        content: 'Нужно подключить';
+        display: inline-block;
+        position: absolute;
+        background-color: rgba(var(--ids__background-RGB), .7);
+        right: 2em;
+        padding: 0 .3em;
+        font-size: .45em;
+        font-weight: 600;
+        width: 7em;
+        color: rgba(var(--ids__hover-RGB), 1);
+      }
+    }
+  }
+  & .ids__sequence {
+
+    /* // плашка "Нужно подключить" (для вертикальных макетов) */
+    & .to-connect-v {
+      
+      outline: 4px solid rgba(var(--ids__hover-RGB), 1);
+      border-radius: 0.4em;
+      position: relative;
+      
+      & p.title {
+    
+        &:after {
+          content: 'Нужно подключить';
+          display: inline-block;
+          position: absolute;
+          background-color: rgba(var(--ids__background-RGB), .7);
+          right: 1.5em;
+padding: 0em 1.2em;
+font-size: .4em;
+font-weight: 600;
+width: 4em;
+transform: rotate(30deg);
+color: rgba(var(--ids__hover-RGB), 1);
+        }
+      }
+    }
+  }
 }
 
 /* // название макета МОЖНО СКОПИРОВАТЬ */
@@ -388,50 +437,55 @@ a.guide-link {
   }
 }
 
-// плашка "Нужно подключить" (для горизонтальных макетов)
-.to-connect-h {
-  
-  outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-  border-radius: 0.4em;
-  position: relative;
-  & p.title {
 
-    &:after {
-      content: 'Нужно подключить';
-      display: inline-block;
-      position: absolute;
-      background-color: rgba(var(--ids__background-RGB), .7);
-      right: 2em;
-      padding: 0 .3em;
-      font-size: .45em;
-      font-weight: 600;
-      width: 7em;
-      color: rgba(var(--ids__hover-RGB), 1);
+.ids__sequence {
+
+  // плашка "Нужно подключить" (для горизонтальных макетов)
+  & .to-connect-h {
+    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
+    border-radius: 0.4em;
+    position: relative;
+    background-color: red;
+    
+    & p.title {
+  
+      &:after {
+        content: 'Нужно подключить';
+        display: inline-block;
+        position: absolute;
+        background-color: rgba(var(--ids__background-RGB), .7);
+        right: 2em;
+        padding: 0 .3em;
+        font-size: .45em;
+        font-weight: 600;
+        width: 7em;
+        color: rgba(var(--ids__hover-RGB), 1);
+      }
     }
   }
-}
-
-// плашка "Нужно подключить" (для вертикальных макетов)
-.to-connect-v {
   
-  outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-  border-radius: 0.4em;
-  position: relative;
-  & p.title {
-
-    &:after {
-      content: 'Нужно подключить';
-      display: inline-block;
-      position: absolute;
-      background-color: rgba(var(--ids__background-RGB), .7);
-      right: 2em;
-      /* margin-left: .5em;
-      margin-top: .6em; */
-      padding: 0 .3em;
-      font-size: .45em;
-      font-weight: 600;
-      width: 7em;
-      color: rgba(var(--ids__hover-RGB), 1);
+  // плашка "Нужно подключить" (для вертикальных макетов)
+  & .to-connect-v {
+    
+    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
+    border-radius: 0.4em;
+    position: relative;
+    & p.title {
+  
+      &:after {
+        content: 'Нужно подключить';
+        display: inline-block;
+        position: absolute;
+        background-color: rgba(var(--ids__background-RGB), .7);
+        right: 2em;
+        /* margin-left: .5em;
+        margin-top: .6em; */
+        padding: 0 .3em;
+        font-size: .45em;
+        font-weight: 600;
+        width: 7em;
+        color: rgba(var(--ids__hover-RGB), 1);
+      }
     }
   }
 }
