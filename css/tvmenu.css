@@ -24,50 +24,26 @@
     }
   }
 
-  & .to-connect-h {
+  & .to-connect {
     outline: 4px solid rgba(var(--ids__hover-RGB), 1);
     border-radius: 0.4em;
     position: relative;
+    padding-bottom: .8em;
    
     & p.title {
   
       &:after {
-        content: 'Нужно подключить';
-        display: inline-block;
+        content: 'нужно подключить';
         position: absolute;
-        background-color: rgba(var(--ids__background-RGB), .7);
-        right: 2em;
-        padding: 0 .3em;
-        font-size: .45em;
-        font-weight: 600;
-        width: 7em;
+        bottom: 0.2em;
+        
+        left: calc(50% - 3.5vw);
+        font-size: .7em;
+        font-weight: 550;
         color: rgba(var(--ids__hover-RGB), 1);
-      }
-    }
-  }
-  & .ids__sequence {
 
-    /* // плашка "Нужно подключить" (для вертикальных макетов) */
-    & .to-connect-v {
-      
-      outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-      border-radius: 0.4em;
-      position: relative;
-      
-      & p.title {
-    
-        &:after {
-          content: 'Нужно подключить';
-          display: inline-block;
-          position: absolute;
-          background-color: rgba(var(--ids__background-RGB), .7);
-          right: 1.5em;
-padding: 0em 1.2em;
-font-size: .4em;
-font-weight: 600;
-width: 4em;
-transform: rotate(30deg);
-color: rgba(var(--ids__hover-RGB), 1);
+        @media screen and (max-width: 1019px) {
+          left: calc(50% - 10vw);
         }
       }
     }
@@ -79,11 +55,12 @@ p.title {
   display: inline-flex;
   margin: 0;
   margin-top: 0.3em;
-  padding: 0.1em 0.3em;
-  font-size: .8em;
+  padding: 0.3em 0 0.3em .3em;
+  font-size: .7em;
   border: 1px solid black;
   border-radius: 0.4em;
   cursor: pointer;
+  width: 100%;
 
   /* @media screen and (max-width: 1019px) {
     font-size: .8em;
@@ -257,7 +234,7 @@ input.radio {
       white-space: nowrap;
       padding: 0;
       font-weight: 500;
-      margin-right: .9em;
+      margin-right: .3em;
 
       @media screen and (max-width: 1019px) {
         margin-bottom: .2em;
@@ -268,7 +245,7 @@ input.radio {
   & button {
     display: flex;
     justify-content: center;
-    width: 10em;
+    width: 11em;
     white-space: nowrap;
     font-size: 0.9em;
     font-weight: 580;
@@ -438,14 +415,14 @@ a.guide-link {
 }
 
 
-.ids__sequence {
+/* .ids__sequence {
 
   // плашка "Нужно подключить" (для горизонтальных макетов)
   & .to-connect-h {
     outline: 4px solid rgba(var(--ids__hover-RGB), 1);
     border-radius: 0.4em;
     position: relative;
-    background-color: red;
+    
     
     & p.title {
   
@@ -454,11 +431,11 @@ a.guide-link {
         display: inline-block;
         position: absolute;
         background-color: rgba(var(--ids__background-RGB), .7);
-        right: 2em;
+        top: 2em;
         padding: 0 .3em;
         font-size: .45em;
-        font-weight: 600;
-        width: 7em;
+        font-weight: 500;
+        /* width: 7em; */
         color: rgba(var(--ids__hover-RGB), 1);
       }
     }
@@ -488,4 +465,4 @@ a.guide-link {
       }
     }
   }
-}
+} */
