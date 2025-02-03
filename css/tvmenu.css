@@ -61,10 +61,8 @@ p.title {
   border-radius: 0.4em;
   cursor: pointer;
   width: 100%;
+  overflow: hidden;
 
-  /* @media screen and (max-width: 1019px) {
-    font-size: .8em;
-  } */
 }
 
 /* /////////////////////////////////////////////////////////////////// */
