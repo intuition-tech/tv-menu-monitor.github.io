@@ -25,21 +25,21 @@
   }
 
   & .to-connect {
-    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-    border-radius: 0.4em;
+    outline: 1.2px solid rgba(var(--ids__hover-RGB), 1);
     position: relative;
-    padding-bottom: .8em;
+    padding: .15em;
+    padding-bottom: .9em;
    
     & p.title {
   
       &:after {
-        content: 'нужно подключить';
+        content: 'Подключается вручную';
         position: absolute;
-        bottom: 0.2em;
+        bottom: 0em;
         
-        left: calc(50% - 3.5vw);
+        /* left: calc(50% - 3.5vw); */
         font-size: .7em;
-        font-weight: 550;
+        /* font-weight: 550; */
         color: rgba(var(--ids__hover-RGB), 1);
 
         @media screen and (max-width: 1019px) {
@@ -55,14 +55,20 @@ p.title {
   display: inline-flex;
   margin: 0;
   margin-top: 0.3em;
-  padding: 0.3em 0 0.3em .3em;
-  font-size: .7em;
-  border: 1px solid black;
+  padding: 0.3em 0.5em 0.3em .3em;
+  border: 1px solid;
+  border-color: rgb(var(--text-RGB));
   border-radius: 0.4em;
   cursor: pointer;
   width: 100%;
   overflow: hidden;
+  word-break: break-word;
+  transition: color 0.5s ease, border-color 0.5s ease;
 
+  &:hover {
+    color: rgb(var(--ids__hover-RGB));
+    transition: color 0s ease, border-color 0s ease;
+  }
 }
 
 /* /////////////////////////////////////////////////////////////////// */
@@ -82,20 +88,14 @@ p.title {
   }
 
   & h1 {
-    font-size: 1.5em;
+    font-size: .9em;
     line-height: 1.35em;
-    /* font-weight: 550; */
-
-    @media screen and (max-width: 1019px) {
-      font-size: 1.2em;
-      
-    }
+    font-weight: 580; 
   }
 
   & p {
-    font-size: .9em;
-    font-weight: 500;
-   
+    /* font-size: .9em; */
+ 
 
     /* @media screen and (max-width: 1019px) {
       font-size: 0.9em;
@@ -130,7 +130,7 @@ p.title {
     }
     /* обертка для одной радиокнопки  */
     & .option {
-      font-size: 0.9em;
+      /* font-size: 0.9em; */
       margin-top: .2em;
 
       @media screen and (max-width: 1019px) {
@@ -147,9 +147,8 @@ p.title {
       }
         /* горизонтальное/вертикальное и период */
       & label {
-
         @media screen and (max-width: 1019px) {
-          font-weight: 450;
+          /* font-weight: 450; */
         }
       }
     }
@@ -172,6 +171,8 @@ p.title {
   }
 }
 
+
+
 label {
   cursor: pointer;
 }
@@ -184,8 +185,12 @@ input.radio {
   top: 3px;
   margin-right: 0.2em;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid;
+  border-color: rgb(var(--text-RGB));
   appearance: none;
+  cursor: pointer;
+  
+ 
 
   &:focus:not(:focus-visible) {
     outline: 0.5px solid black;
@@ -196,6 +201,30 @@ input.radio {
     background-color: black;
     outline: 0.5px solid black; */
     transition: 0.2s all linear;
+    
+  }
+}
+
+/* // для ховера фомата и периода (надписи и кнопки) */
+.option {
+  transition: color 0.5s ease;
+  
+  & input.radio {
+    transition:  border-color 0.5s ease;
+  }
+
+  &:hover {
+    color: rgb(var(--ids__hover-RGB));
+    transition: color 0s ease;
+    
+    & input.radio {
+      border-color: rgb(var(--ids__hover-RGB));
+      transition:  border-color 0s ease;
+
+      &:checked {
+        border-color: lightgray;
+      }
+    }
   }
 }
 
@@ -204,7 +233,6 @@ input.radio {
 /* выпадающее меню "Вид меню" */
 #dropdown {
   display: flex;
-  /* align-items: baseline; */
   height: 2em;
   margin: 2em 0 2em;
   position: relative;
@@ -231,7 +259,7 @@ input.radio {
     &:first-of-type {
       white-space: nowrap;
       padding: 0;
-      font-weight: 500;
+      /* font-weight: 500; */
       margin-right: .3em;
 
       @media screen and (max-width: 1019px) {
@@ -243,16 +271,23 @@ input.radio {
   & button {
     display: flex;
     justify-content: center;
-    width: 11em;
+    width: 10em;
     white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 580;
+    /* font-size: 0.9em; */
+    /* font-weight: 580; */
     padding: 0.3em 5.06em;
     border: 1px solid black;
-    border-radius: 1em;
     background-color: transparent;
     box-shadow: none;
     cursor: pointer;
+    
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      /* color: rgb(var(--ids__hover-RGB)); */
+      background-color: rgb(var(--ids__hover-RGB));
+      transition: background-color 0s ease;
+    }
 
     @media screen and (max-width: 1019px) {
       padding: .3em 0.5em .4em;
@@ -299,20 +334,25 @@ input.radio {
     & li {
       margin: 0;
       margin-top: 0.06em;
-      padding: 0.3em 0.4em 0.35em 0.3em;
-      font-size: 0.9em;
-      background-color: rgb(242, 242, 242);
-      border-radius: 1em;
-      cursor: pointer;
+      width: 13.8vw;
       
+      padding: 0.3em 0.4em 0.35em 0.3em;
+      /* font-size: 0.9em; */
+      background-color: rgb(242, 242, 242);
+      /* background-color: rgb(var(--ids__hover-RGB)); */
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+
       @media screen and (max-width: 1019px) {
+        width: 100%;
         font-size: .88em;
         margin-top: 0.1em;
         padding: 0.4em 0 0.3em 0.2em;
       }
 
       &:hover {
-        background-color: white;
+        background-color: rgb(var(--ids__hover-RGB));
+        transition: background-color 0s ease;
       }
       &:before {
         content: none;
@@ -332,7 +372,7 @@ input.radio {
 
     & p#menu-description {
       font-size: .55em;
-      font-weight: 450;
+      /* font-weight: 450; */
       margin: 0;
       white-space: break-spaces;
     }
@@ -344,47 +384,22 @@ input.radio {
 
 /* ///////////////////////////////////////////////////////////////// */
 
-/* Название "41 цикл" */
-.cycle-name {
-  display: flex;
-  
-  margin: 1.5em 0;
 
-  @media screen and (max-width: 1019px) {
-    margin: 1em 0;
-    /* justify-content: space-between; */
-    align-items: baseline;
-  }
-  & p {
-    &:first-of-type {
-      margin-right: 1em;
-
-      @media screen and (max-width: 1019px) {
-        margin-right: .5em;
-      }
-    }
-  }
-  & p {
-    &:last-of-type {
-      @media screen and (max-width: 1019px) {
-        font-size: .85em;
-      }
-    }
-  }
-}
 
 /* ссылка на гайд  */
 a.guide-link {
-  display: inline-block;
+  display: inline;
   color: var(--ids__text-RGB);
   border: none;
-  font-size: 0.8em;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: underline;
+  /* font-weight: 500; */
+  border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
+  text-decoration: none;
+  transition: color 0.5s ease, border 0.5s ease;
 
   &:hover {
-    border: none;
+    color: rgb(var(--ids__hover-RGB));
+    border-bottom: 1px solid rgba(var(--ids__hover-RGB), 0.2);
+    transition: color 0s ease, border 0s ease;
   }
 }
 
@@ -411,56 +426,3 @@ a.guide-link {
     cursor: not-allowed;
   }
 }
-
-
-/* .ids__sequence {
-
-  // плашка "Нужно подключить" (для горизонтальных макетов)
-  & .to-connect-h {
-    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-    border-radius: 0.4em;
-    position: relative;
-    
-    
-    & p.title {
-  
-      &:after {
-        content: 'Нужно подключить';
-        display: inline-block;
-        position: absolute;
-        background-color: rgba(var(--ids__background-RGB), .7);
-        top: 2em;
-        padding: 0 .3em;
-        font-size: .45em;
-        font-weight: 500;
-        /* width: 7em; */
-        color: rgba(var(--ids__hover-RGB), 1);
-      }
-    }
-  }
-  
-  // плашка "Нужно подключить" (для вертикальных макетов)
-  & .to-connect-v {
-    
-    outline: 4px solid rgba(var(--ids__hover-RGB), 1);
-    border-radius: 0.4em;
-    position: relative;
-    & p.title {
-  
-      &:after {
-        content: 'Нужно подключить';
-        display: inline-block;
-        position: absolute;
-        background-color: rgba(var(--ids__background-RGB), .7);
-        right: 2em;
-        /* margin-left: .5em;
-        margin-top: .6em; */
-        padding: 0 .3em;
-        font-size: .45em;
-        font-weight: 600;
-        width: 7em;
-        color: rgba(var(--ids__hover-RGB), 1);
-      }
-    }
-  }
-} */

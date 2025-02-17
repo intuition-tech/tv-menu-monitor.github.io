@@ -5,17 +5,14 @@
 /* Fonts */
 
 @font-face {
-  /* font-family: "Root UI"; */
   font-style: normal;
   font-display: swap;
-  /* src: url("../fonts/pt-root-ui_vf.woff2") format("woff2"),
-    url("../fonts/pt-root-ui_vf.woff") format("woff"); */
-  font-family: "Rooftop";
-  src: url("../fonts/Rooftop-Regular.otf") format("opentype");
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont.ttf") format("truetype");
 }
 
 body {
-  font-family: "Rooftop";
+  font-family: "Inter";
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
@@ -27,7 +24,7 @@ body {
 }
 
 body {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: var(--ids__density);
 }
 
