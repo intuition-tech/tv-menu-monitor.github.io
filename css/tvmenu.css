@@ -1,16 +1,38 @@
+
+
+
+
 /* <!-- обертка для макетов и фильтр-меню  --> */
 .wrapper-content-filter {
   display: flex;
   justify-content: space-between;
+  
 
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
-    max-width: 77%;
+    max-width: 81%;
+    margin-top: 3em;
 
-    @media screen and (max-width: 1019px) {
-      max-width: 55%;
+    @media screen and (max-width: 768px) {
+      margin-top: 1em;
+      max-width: 48%;
     }
+
+    & .horizontal-header, .vertical-header {
+        position: fixed;
+        width: 76%;
+        z-index: 1;
+        top: 0;
+        padding: .6em 0 .8em;
+        transition: background-color 0.3s ease;
+        background: linear-gradient(180deg, rgba(var(--ids__background-RGB), 1) 71%, rgba(var(--ids__background-RGB), 0.5) 83%, rgba(var(--ids__background-RGB), 0.01) 92%);
+        
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+  
+      }
   }
   & .previous {
     img {
@@ -19,9 +41,7 @@
   }
   & .after-12 {
     margin-top: 3em;
-    @media screen and (max-width: 1019px) {
-      margin-top: 1.5em;
-    }
+    
   }
 
   & .to-connect {
@@ -42,11 +62,25 @@
         /* font-weight: 550; */
         color: rgba(var(--ids__hover-RGB), 1);
 
-        @media screen and (max-width: 1019px) {
+        @media screen and (max-width: 768px) {
           left: calc(50% - 10vw);
         }
       }
     }
+  }
+}
+
+
+p.rotation {
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+  rotate: 270deg;
+  left: -4.5%;
+  padding: .4em 2em;
+  margin-top: 2em;
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -60,6 +94,9 @@ p.title {
   border-color: rgb(var(--text-RGB));
   border-radius: 0.4em;
   cursor: pointer;
+  min-height: 2em;
+  min-width: 8.7em;
+  /* height: 3.4em; */
   width: 100%;
   overflow: hidden;
   word-break: break-word;
@@ -70,21 +107,42 @@ p.title {
     transition: color 0s ease, border-color 0s ease;
   }
 }
+p.comment {
+  display: none;
+  padding: 0.3em 0.5em 0.3em .3em;
+  border: 1px solid;
+  border-color: rgb(var(--text-RGB));
+  border-radius: 0.4em;
+  margin-top: .3em;
+}
+& .show {
+  display: inline-block;
+}
 
 /* /////////////////////////////////////////////////////////////////// */
 
 /* ФИЛЬТР МЕНЮ  */
 .filter-menu {
-  background-color: rgba(var(--ids__text-RGB), 0.1);
-  padding: 0.6em 0.6em;
-  margin-left: .5em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* background-color: rgba(var(--ids__text-RGB), 0.1); */
+  
+  padding: 0.6em 1em 0.7em;
+  margin: 0.3em .6em .5em ;
   border-radius: 0.4em;
   max-height: fit-content;
-  width: 24%;
+  width: 12.5em;
+  box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
+-webkit-box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
+-moz-box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
+  
+  /* width: 23%; */
 
-  @media screen and (max-width: 1019px) {
-    width: 50%;
-    margin-left: 0.1em;
+  @media screen and (max-width: 768px) {
+    /* width: 50%;
+    margin-left: 0.1em; */
+    margin-right: 0em;
   }
 
   & h1 {
@@ -97,7 +155,7 @@ p.title {
     /* font-size: .9em; */
  
 
-    /* @media screen and (max-width: 1019px) {
+    /* @media screen and (max-width: 768px) {
       font-size: 0.9em;
     } */
   }
@@ -105,15 +163,16 @@ p.title {
   /* // формат и период */
   & .fieldset {
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
     /* justify-content: space-between; */
     align-items: baseline;
     padding: 0;
     border: none;
 
-    @media screen and (max-width: 1019px) {
+    /* @media screen and (max-width: 768px) {
       flex-direction: column;
-    }  
+    }   */
   }
   & .legend {
     margin: 0;
@@ -122,51 +181,49 @@ p.title {
   
   /* обертка для двух радиокнопок (черных кружков) и текста  */
   & .option-wrap {  
-    /* width: 54%; */
-    margin-left: 1.3em;
-    @media screen and (max-width: 1019px) {
+    /* margin-left: 1.3em; */
+
+    @media screen and (max-width: 768px) {
       margin-left: 0;
-      /* width: 100%; */
     }
     /* обертка для одной радиокнопки  */
     & .option {
-      /* font-size: 0.9em; */
       margin-top: .2em;
 
-      @media screen and (max-width: 1019px) {
+      @media screen and (max-width: 768px) {
        align-items: center;
         margin-bottom: .3em;
-        font-size: .8em;
+        /* font-size: .8em; */
       }
 
       & input {
         
-        @media screen and (max-width: 1019px) {
+        @media screen and (max-width: 768px) {
           margin-right: 0.2em;
         }
       }
         /* горизонтальное/вертикальное и период */
       & label {
-        @media screen and (max-width: 1019px) {
+        @media screen and (max-width: 768px) {
           /* font-weight: 450; */
         }
       }
     }
   }
   & .format-wrap {
-    
+    margin-bottom: 1.8em;
     width: 16vw;
-    @media screen and (max-width: 1019px) {
-      /* margin-left: 0; */
+    @media screen and (max-width: 768px) {
       width: 100%;
+      margin-bottom: .3em;
     }
   }
   & .period-wrap {
-    
+    margin-bottom: 1.1em;
     width: 12vw;
-    @media screen and (max-width: 1019px) {
-      /* margin-left: 0; */
+    @media screen and (max-width: 768px) {
       width: 90%;
+      margin-bottom: 0em;
     }
   }
 }
@@ -233,25 +290,21 @@ input.radio {
 /* выпадающее меню "Вид меню" */
 #dropdown {
   display: flex;
+  flex-direction: column;
   height: 2em;
-  margin: 2em 0 2em;
+  margin: 2em 0 3em;
   position: relative;
 
 
-  @media screen and (max-width: 1019px) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
     align-content: flex-start;
     margin-top: 0.8em;
-    margin: 2em 0 2em;
+    margin: 1em 0 2em;
   }
 
   & nav {
     width: 100%;
     flex-direction: column;
-    
-    @media screen and (max-width: 1019px) {
-      width: 100%;
-    }
   }
 
   & p {
@@ -259,12 +312,8 @@ input.radio {
     &:first-of-type {
       white-space: nowrap;
       padding: 0;
-      /* font-weight: 500; */
       margin-right: .3em;
 
-      @media screen and (max-width: 1019px) {
-        margin-bottom: .2em;
-      }
     }
   }
   /* кнопка открытия меню "Выберите" */
@@ -277,7 +326,7 @@ input.radio {
     /* font-weight: 580; */
     padding: 0.3em 5.06em;
     border: 1px solid black;
-    background-color: transparent;
+    background-color: rgb(var(--ids__background-RGB));
     box-shadow: none;
     cursor: pointer;
     
@@ -289,10 +338,7 @@ input.radio {
       transition: background-color 0s ease;
     }
 
-    @media screen and (max-width: 1019px) {
-      padding: .3em 0.5em .4em;
-      /* width: 10em; */
-    }
+   
 
     &.active {
       /* // arrow down */
@@ -326,7 +372,7 @@ input.radio {
     /* width: -webkit-fill-available; */
     /* width: 62%; */
 
-    @media screen and (max-width: 1019px) {
+    @media screen and (max-width: 768px) {
       width: 100%;
       width: -webkit-fill-available;
     }
@@ -339,14 +385,15 @@ input.radio {
       padding: 0.3em 0.4em 0.35em 0.3em;
       /* font-size: 0.9em; */
       background-color: rgb(242, 242, 242);
+      
       /* background-color: rgb(var(--ids__hover-RGB)); */
       cursor: pointer;
       transition: background-color 0.5s ease;
 
-      @media screen and (max-width: 1019px) {
+      @media screen and (max-width: 768px) {
         width: 100%;
-        font-size: .88em;
-        margin-top: 0.1em;
+        /* font-size: .88em; */
+        /* margin-top: 0.1em; */
         padding: 0.4em 0 0.3em 0.2em;
       }
 
@@ -376,7 +423,7 @@ input.radio {
       margin: 0;
       white-space: break-spaces;
     }
-    @media screen and (max-width: 1019px) {
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }

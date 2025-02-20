@@ -26,10 +26,11 @@
   }
 
   &.wide {
-    width: 100%;
+    width: 96%;
     padding: 0 calc(var(--ids__density) * 0.75em);
 
     @media (width < 767px) {
+      width: 100%;
       padding: 0 calc(var(--ids__density) * 0.6em);
     }
   }
@@ -158,9 +159,19 @@
   &.M {
     & .ids__sequence-item {
       --columns: 4;
+      height: fit-content;
+
+      figure {
+        height: 7.6em;
+        width: 13.6em;
+      }
 
       @media screen and (max-width: 768px) {
         --columns: 1;
+        figure {
+          height: 6.2em;
+          width: 11.75em;
+        }
       }
     }
   }
@@ -168,9 +179,17 @@
   &.S {
     & .ids__sequence-item {
       --columns: 6;
+      height: fit-content;
+      figure {
+        height: 15.8em;
+      }
 
-      @media (--ids-mobile) {
+      @media screen and (max-width: 768px) {
         --columns: 3;
+        figure {
+          width: 12em;
+          height: 21em;
+        }
       }
     }
   }
