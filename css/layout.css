@@ -161,17 +161,17 @@
       --columns: 4;
       height: fit-content;
 
-      figure {
+      /* figure {
         height: 7.6em;
         width: 13.6em;
-      }
+      } */
 
       @media screen and (max-width: 768px) {
         --columns: 1;
-        figure {
+        /* figure {
           height: 6.2em;
           width: 11.75em;
-        }
+        } */
       }
     }
   }
@@ -180,16 +180,16 @@
     & .ids__sequence-item {
       --columns: 6;
       height: fit-content;
-      figure {
+      /* figure {
         height: 15.8em;
-      }
+      } */
 
       @media screen and (max-width: 768px) {
         --columns: 3;
-        figure {
+        /* figure {
           width: 12em;
           height: 21em;
-        }
+        } */
       }
     }
   }

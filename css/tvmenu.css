@@ -1,17 +1,12 @@
-
-
-
-
 /* <!-- обертка для макетов и фильтр-меню  --> */
 .wrapper-content-filter {
   display: flex;
   justify-content: space-between;
-  
 
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
-    max-width: 81%;
+    width: 83%;
     margin-top: 3em;
 
     @media screen and (max-width: 768px) {
@@ -19,20 +14,26 @@
       max-width: 48%;
     }
 
-    & .horizontal-header, .vertical-header {
-        position: fixed;
-        width: 76%;
-        z-index: 1;
-        top: 0;
-        padding: .6em 0 .8em;
-        transition: background-color 0.3s ease;
-        background: linear-gradient(180deg, rgba(var(--ids__background-RGB), 1) 71%, rgba(var(--ids__background-RGB), 0.5) 83%, rgba(var(--ids__background-RGB), 0.01) 92%);
-        
-        @media screen and (max-width: 768px) {
-          display: none;
-        }
-  
+    & .horizontal-header,
+    .vertical-header {
+      position: fixed;
+      width: 76%;
+      max-width: 81%;
+      z-index: 1;
+      top: 0;
+      padding: 0.6em 0 0.8em;
+      transition: background-color 0.3s ease;
+      background: linear-gradient(
+        180deg,
+        rgba(var(--ids__background-RGB), 1) 71%,
+        rgba(var(--ids__background-RGB), 0.5) 83%,
+        rgba(var(--ids__background-RGB), 0.01) 92%
+      );
+
+      @media screen and (max-width: 768px) {
+        display: none;
       }
+    }
   }
   & .previous {
     img {
@@ -41,24 +42,22 @@
   }
   & .after-12 {
     margin-top: 3em;
-    
   }
 
   & .to-connect {
     outline: 1.2px solid rgba(var(--ids__hover-RGB), 1);
     position: relative;
-    padding: .15em;
-    padding-bottom: .9em;
-   
+    padding: 0.15em;
+    padding-bottom: 0.9em;
+
     & p.title {
-  
       &:after {
-        content: 'Подключается вручную';
+        content: "Подключается вручную";
         position: absolute;
         bottom: 0em;
-        
+
         /* left: calc(50% - 3.5vw); */
-        font-size: .7em;
+        font-size: 0.7em;
         /* font-weight: 550; */
         color: rgba(var(--ids__hover-RGB), 1);
 
@@ -70,14 +69,13 @@
   }
 }
 
-
 p.rotation {
   position: absolute;
   position: fixed;
   z-index: 1;
   rotate: 270deg;
   left: -4.5%;
-  padding: .4em 2em;
+  padding: 0.4em 2em;
   margin-top: 2em;
   @media screen and (max-width: 768px) {
     display: none;
@@ -89,7 +87,7 @@ p.title {
   display: inline-flex;
   margin: 0;
   margin-top: 0.3em;
-  padding: 0.3em 0.5em 0.3em .3em;
+  padding: 0.3em 0.5em 0.3em 0.3em;
   border: 1px solid;
   border-color: rgb(var(--text-RGB));
   border-radius: 0.4em;
@@ -109,11 +107,11 @@ p.title {
 }
 p.comment {
   display: none;
-  padding: 0.3em 0.5em 0.3em .3em;
+  padding: 0.3em 0.5em 0.3em 0.3em;
   border: 1px solid;
   border-color: rgb(var(--text-RGB));
   border-radius: 0.4em;
-  margin-top: .3em;
+  margin-top: 0.3em;
 }
 & .show {
   display: inline-block;
@@ -127,16 +125,16 @@ p.comment {
   right: 0;
   top: 0;
   /* background-color: rgba(var(--ids__text-RGB), 0.1); */
-  
+
   padding: 0.6em 1em 0.7em;
-  margin: 0.3em .6em .5em ;
+  margin: 0.3em 0.6em 0.5em;
   border-radius: 0.4em;
   max-height: fit-content;
   width: 12.5em;
-  box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
--webkit-box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
--moz-box-shadow: -5px 12px 23px 0px rgba(217,217,217,0.87);
-  
+  box-shadow: -5px 12px 23px 0px rgba(217, 217, 217, 0.87);
+  -webkit-box-shadow: -5px 12px 23px 0px rgba(217, 217, 217, 0.87);
+  -moz-box-shadow: -5px 12px 23px 0px rgba(217, 217, 217, 0.87);
+
   /* width: 23%; */
 
   @media screen and (max-width: 768px) {
@@ -146,14 +144,13 @@ p.comment {
   }
 
   & h1 {
-    font-size: .9em;
+    font-size: 0.9em;
     line-height: 1.35em;
-    font-weight: 580; 
+    font-weight: 580;
   }
 
   & p {
     /* font-size: .9em; */
- 
 
     /* @media screen and (max-width: 768px) {
       font-size: 0.9em;
@@ -176,36 +173,25 @@ p.comment {
   }
   & .legend {
     margin: 0;
-
   }
-  
-  /* обертка для двух радиокнопок (черных кружков) и текста  */
-  & .option-wrap {  
-    /* margin-left: 1.3em; */
 
+  /* обертка для двух радиокнопок (черных кружков) и текста  */
+  & .option-wrap {
     @media screen and (max-width: 768px) {
       margin-left: 0;
     }
     /* обертка для одной радиокнопки  */
     & .option {
-      margin-top: .2em;
+      margin-top: 0.2em;
 
       @media screen and (max-width: 768px) {
-       align-items: center;
-        margin-bottom: .3em;
-        /* font-size: .8em; */
+        align-items: center;
+        margin-bottom: 0.3em;
       }
 
       & input {
-        
         @media screen and (max-width: 768px) {
           margin-right: 0.2em;
-        }
-      }
-        /* горизонтальное/вертикальное и период */
-      & label {
-        @media screen and (max-width: 768px) {
-          /* font-weight: 450; */
         }
       }
     }
@@ -215,7 +201,7 @@ p.comment {
     width: 16vw;
     @media screen and (max-width: 768px) {
       width: 100%;
-      margin-bottom: .3em;
+      margin-bottom: 0.3em;
     }
   }
   & .period-wrap {
@@ -227,8 +213,6 @@ p.comment {
     }
   }
 }
-
-
 
 label {
   cursor: pointer;
@@ -246,44 +230,48 @@ input.radio {
   border-color: rgb(var(--text-RGB));
   appearance: none;
   cursor: pointer;
-  
- 
 
   &:focus:not(:focus-visible) {
     outline: 0.5px solid black;
   }
 
   &:checked {
-    border: 2px solid lightgray;
+    border: 2px solid;
+    border-color: lightgray;
     background-color: black;
-    outline: 0.5px solid black; */
+    outline: 0.5px solid black;
     transition: 0.2s all linear;
-    
+    transition: outline 0.5s ease, background-color 0.5s ease;
   }
 }
 
 /* // для ховера фомата и периода (надписи и кнопки) */
+/* ховеры ниже основных стилей, чтобы захватили все стили радиокнопок, которые выше */
 .option {
   transition: color 0.5s ease;
-  
+
   & input.radio {
-    transition:  border-color 0.5s ease;
+    transition: border-color 0.5s ease;
   }
 
   &:hover {
     color: rgb(var(--ids__hover-RGB));
     transition: color 0s ease;
-    
+
     & input.radio {
       border-color: rgb(var(--ids__hover-RGB));
-      transition:  border-color 0s ease;
+      transition: border-color 0s ease;
 
       &:checked {
         border-color: lightgray;
+        background-color: rgb(var(--ids__hover-RGB));
+        outline: 0.5px solid rgb(var(--ids__hover-RGB));
+        transition: outline 0s ease, background-color 0s ease;
       }
     }
   }
 }
+
 
 /* ///////////////////////////////////////////////////////////////// */
 
@@ -294,7 +282,6 @@ input.radio {
   height: 2em;
   margin: 2em 0 3em;
   position: relative;
-
 
   @media screen and (max-width: 768px) {
     align-content: flex-start;
@@ -308,12 +295,10 @@ input.radio {
   }
 
   & p {
-    
     &:first-of-type {
       white-space: nowrap;
       padding: 0;
-      margin-right: .3em;
-
+      margin-right: 0.3em;
     }
   }
   /* кнопка открытия меню "Выберите" */
@@ -322,23 +307,20 @@ input.radio {
     justify-content: center;
     width: 10em;
     white-space: nowrap;
-    /* font-size: 0.9em; */
-    /* font-weight: 580; */
     padding: 0.3em 5.06em;
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: rgb(var(--ids__text-RGB));
     background-color: rgb(var(--ids__background-RGB));
     box-shadow: none;
     cursor: pointer;
-    
-    transition: background-color 0.5s ease;
+    color: rgb(var(--ids__text-RGB));
+    transition: border-color 0.5s ease, color 0.5s ease;
 
     &:hover {
-      /* color: rgb(var(--ids__hover-RGB)); */
-      background-color: rgb(var(--ids__hover-RGB));
-      transition: background-color 0s ease;
+      color: rgb(var(--ids__hover-RGB));
+      border-color: rgb(var(--ids__hover-RGB));
+      transition: border-color 0s ease, color 0s ease;
     }
-
-   
 
     &.active {
       /* // arrow down */
@@ -369,8 +351,6 @@ input.radio {
     display: none;
     position: absolute;
     z-index: 1;
-    /* width: -webkit-fill-available; */
-    /* width: 62%; */
 
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -381,25 +361,22 @@ input.radio {
       margin: 0;
       margin-top: 0.06em;
       width: 13.8vw;
-      
       padding: 0.3em 0.4em 0.35em 0.3em;
-      /* font-size: 0.9em; */
       background-color: rgb(242, 242, 242);
-      
-      /* background-color: rgb(var(--ids__hover-RGB)); */
       cursor: pointer;
-      transition: background-color 0.5s ease;
+      color: rgb(var(--ids__text-RGB));
+      transition: color 0.5s ease;
 
       @media screen and (max-width: 768px) {
         width: 100%;
-        /* font-size: .88em; */
-        /* margin-top: 0.1em; */
         padding: 0.4em 0 0.3em 0.2em;
       }
 
       &:hover {
-        background-color: rgb(var(--ids__hover-RGB));
-        transition: background-color 0s ease;
+        outline: 0.3px solid;
+        outline-color: rgb(var(--ids__hover-RGB));
+        color: rgb(var(--ids__hover-RGB));
+        transition: color 0s ease;
       }
       &:before {
         content: none;
@@ -418,8 +395,7 @@ input.radio {
     padding: 0 0.1em 0 0.2em;
 
     & p#menu-description {
-      font-size: .55em;
-      /* font-weight: 450; */
+      font-size: 0.55em;
       margin: 0;
       white-space: break-spaces;
     }
@@ -431,14 +407,11 @@ input.radio {
 
 /* ///////////////////////////////////////////////////////////////// */
 
-
-
 /* ссылка на гайд  */
 a.guide-link {
   display: inline;
   color: var(--ids__text-RGB);
   border: none;
-  /* font-weight: 500; */
   border-bottom: 1px solid rgba(var(--ids__text-RGB), 0.2);
   text-decoration: none;
   transition: color 0.5s ease, border 0.5s ease;
