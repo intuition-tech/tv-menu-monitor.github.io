@@ -242,6 +242,11 @@ input.radio {
     outline: 0.5px solid black;
     transition: 0.2s all linear;
     transition: outline 0.5s ease, background-color 0.5s ease;
+
+    &:hover {
+      outline: 0.5px solid rgb(var(--ids__hover-RGB));
+      transition: outline 0s ease;
+    }
   }
 }
 
@@ -271,7 +276,6 @@ input.radio {
     }
   }
 }
-
 
 /* ///////////////////////////////////////////////////////////////// */
 
