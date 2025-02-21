@@ -161,17 +161,19 @@
       --columns: 4;
       height: fit-content;
 
-      /* figure {
-        height: 7.6em;
-        width: 13.6em;
-      } */
+      figure {
+        min-height: 7.6em;
+        min-width: 13.6em;
+      }
 
       @media screen and (max-width: 768px) {
         --columns: 1;
-        /* figure {
-          height: 6.2em;
-          width: 11.75em;
-        } */
+        width: 61%;
+
+        figure {
+          min-height: 6.2em;
+          min-width: 8em;
+        }
       }
     }
   }
@@ -186,6 +188,7 @@
 
       @media screen and (max-width: 768px) {
         --columns: 3;
+        width: 61%;
         /* figure {
           width: 12em;
           height: 21em;

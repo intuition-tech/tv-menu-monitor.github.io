@@ -1,23 +1,25 @@
 /* <!-- обертка для макетов и фильтр-меню  --> */
 .wrapper-content-filter {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center; */
 
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
+    min-width: 80%;
     width: 83%;
     margin-top: 3em;
 
     @media screen and (max-width: 768px) {
       margin-top: 1em;
       max-width: 48%;
+      max-width: 20em;
     }
 
-    & .horizontal-header,
+    /* & .horizontal-header,
     .vertical-header {
       position: fixed;
-      width: 76%;
+      width: 77.5%;
       max-width: 81%;
       z-index: 1;
       top: 0;
@@ -29,11 +31,14 @@
         rgba(var(--ids__background-RGB), 0.5) 83%,
         rgba(var(--ids__background-RGB), 0.01) 92%
       );
+      & .ids__sequence-item {
+        padding-left: 1em;
+      }
 
       @media screen and (max-width: 768px) {
         display: none;
       }
-    }
+    } */
   }
   & .previous {
     img {
@@ -69,16 +74,141 @@
   }
 }
 
-p.rotation {
-  position: absolute;
+.horizontal-numbers-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-width: 77.5%;
+  min-height: 3em;
+  top: 0;
+  padding-top: 0.5em;
+
+  background-color: white;
+
   position: fixed;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--ids__background-RGB), 1) 71%,
+    rgba(var(--ids__background-RGB), 0.5) 83%,
+    rgba(var(--ids__background-RGB), 0.01) 92%
+  );
   z-index: 1;
-  rotate: 270deg;
-  left: -4.5%;
-  padding: 0.4em 2em;
-  margin-top: 2em;
+
   @media screen and (max-width: 768px) {
     display: none;
+  }
+
+  & .r-one {
+    grid-area: 2 / 1 / 3 / 2;
+    position: fixed;
+    rotate: 270deg;
+    margin-top: 5em;
+    margin-left: -3.5em;
+    z-index: 1;
+  }
+  & .r-two {
+    grid-area: 3 / 1 / 4 / 2;
+    position: fixed;
+    rotate: 270deg;
+    margin-top: 30%;
+    margin-left: -3.5em;
+    z-index: 1;
+  }
+  & .one {
+    /* position: fixed; */
+    grid-area: 1 / 2 / 2 / 3;
+    z-index: 1;
+    margin-left: -50%;
+    /* margin-top: -1.5em; */
+  }
+  & .two {
+    /* position: fixed; */
+    grid-area: 1 / 3 / 2 / 4;
+    z-index: 1;
+    margin-left: -30%;
+    /* margin-top: -1.5em; */
+  }
+  & .three {
+    /* position: fixed; */
+    grid-area: 1 / 4 / 2 / 5;
+    z-index: 1;
+    margin-left: 0;
+    /* margin-top: -1.5em; */
+  }
+  & .four {
+    /* position: fixed; */
+    grid-area: 1 / 5 / 2 / 6;
+    z-index: 1;
+    margin-left: 10%;
+    /* margin-top: -1.5em; */
+  }
+}
+
+.vertical-numbers-wrap {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  min-width: 78.5%;
+  min-height: 3em;
+  top: 0;
+  padding-top: 0.5em;
+
+  position: fixed;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--ids__background-RGB), 1) 71%,
+    rgba(var(--ids__background-RGB), 0.5) 83%,
+    rgba(var(--ids__background-RGB), 0.01) 92%
+  );
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  & .r-one {
+    grid-area: 2 / 1 / 3 / 2;
+    position: fixed;
+    rotate: 270deg;
+    margin-top: 5em;
+    margin-left: -3.5em;
+    z-index: 1;
+  }
+  & .r-two {
+    grid-area: 3 / 1 / 4 / 2;
+    position: fixed;
+    rotate: 270deg;
+    margin-top: 38%;
+    margin-left: -3.5em;
+    z-index: 1;
+  }
+  & .one {
+    grid-area: 1 / 1 / 2 / 3;
+    margin-left: 10%;
+  }
+  & .two {
+    grid-area: 1 / 3 / 2 / 4;
+    margin-left: -55%;
+  }
+  & .three {
+    grid-area: 1 / 4 / 2 / 5;
+    margin-left: -35%;
+  }
+  & .four {
+    grid-area: 1 / 5 / 2 / 6;
+    margin-left: -25%;
+  }
+  & .five {
+    grid-area: 1 / 6 / 2 / 7;
+  }
+  & .six {
+    grid-area: 1 / 7 / 2 / 8;
+    margin-left: 18%;
   }
 }
 
@@ -124,7 +254,7 @@ p.comment {
   position: fixed;
   right: 0;
   top: 0;
-  /* background-color: rgba(var(--ids__text-RGB), 0.1); */
+  background-color: rgb(var(--ids__background-RGB));
 
   padding: 0.6em 1em 0.7em;
   margin: 0.3em 0.6em 0.5em;
