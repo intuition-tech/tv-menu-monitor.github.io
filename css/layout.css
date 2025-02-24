@@ -114,6 +114,7 @@
 .ids__sequence {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   margin-bottom: calc(var(--ids__density) * 0.4em);
   --gap: 0em;
   gap: var(--gap);

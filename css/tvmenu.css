@@ -16,6 +16,10 @@
       max-width: 20em;
     }
 
+    & figure {
+      margin-bottom: 0.3em;
+    }
+    
     /* & .horizontal-header,
     .vertical-header {
       position: fixed;
@@ -45,31 +49,32 @@
       filter: grayscale();
     }
   }
-  & .after-12 {
-    margin-top: 3em;
-  }
+  /* & .time {
+    margin-bottom: 1em;
+  } */
 
   & .to-connect {
-    outline: 1.5px solid rgba(var(--ids__hover-RGB), 1);
     position: relative;
-    padding: 0.1em;
-    padding-bottom: 0.9em;
+    outline: 1.5px solid rgba(var(--ids__hover-RGB), 1);
+    border-radius: 0.4em;
+    /* padding: 0.1em; */
+    padding-top: 0.9em;
 
-    & p.title {
-      &:after {
-        content: "Подключается вручную";
-        position: absolute;
-        bottom: 0em;
+    &:after {
+      content: "Подключается вручную";
+      position: absolute;
+      top: -0em;
 
-        /* left: calc(50% - 3.5vw); */
-        font-size: 0.7em;
-        /* font-weight: 550; */
-        color: rgba(var(--ids__hover-RGB), 1);
+      left: calc(50% - 6vw);
+      font-size: 0.75em;
+      /* font-weight: 550; */
+      color: rgba(var(--ids__hover-RGB), 1);
 
-        @media screen and (max-width: 768px) {
-          left: calc(50% - 10vw);
-        }
+      @media screen and (max-width: 768px) {
+        left: calc(50% - 10vw);
       }
+    }
+    & p.title {
     }
   }
 }
@@ -216,7 +221,7 @@
 p.title {
   display: inline-flex;
   margin: 0;
-  margin-top: 0.3em;
+  /* margin-top: 0.3em; */
   padding: 0.3em 0.5em 0.3em 0.3em;
   border: 1px solid;
   border-color: rgb(var(--text-RGB));
@@ -304,6 +309,7 @@ p.comment {
   }
   & .legend {
     margin: 0;
+    margin-bottom: 0.25em;
   }
 
   /* обертка для двух радиокнопок (черных кружков) и текста  */
@@ -368,7 +374,7 @@ input.radio {
 
   &:checked {
     border: 2px solid;
-    border-color: lightgray;
+    border-color: rgb(var(--ids__background-RGB));
     background-color: black;
     outline: 0.5px solid black;
     transition: 0.2s all linear;
@@ -399,7 +405,7 @@ input.radio {
       transition: border-color 0s ease;
 
       &:checked {
-        border-color: lightgray;
+        border-color: rgb(var(--ids__background-RGB));
         background-color: rgb(var(--ids__hover-RGB));
         outline: 0.5px solid rgb(var(--ids__hover-RGB));
         transition: outline 0s ease, background-color 0s ease;
