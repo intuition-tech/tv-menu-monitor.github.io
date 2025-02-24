@@ -182,17 +182,17 @@
     & .ids__sequence-item {
       --columns: 6;
       height: fit-content;
-      /* figure {
-        height: 15.8em;
-      } */
+      figure {
+        min-height: 15.8em;
+      }
 
       @media screen and (max-width: 768px) {
         --columns: 3;
         width: 61%;
-        /* figure {
-          width: 12em;
-          height: 21em;
-        } */
+        figure {
+          min-width: 12em;
+          min-height: 21em;
+        }
       }
     }
   }

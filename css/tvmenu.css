@@ -52,7 +52,7 @@
   & .to-connect {
     outline: 1.2px solid rgba(var(--ids__hover-RGB), 1);
     position: relative;
-    padding: 0.15em;
+    padding: 0.1em;
     padding-bottom: 0.9em;
 
     & p.title {
@@ -258,6 +258,7 @@ p.comment {
 
   padding: 0.6em 1em 0.7em;
   margin: 0.3em 0.6em 0.5em;
+  margin: 0.45em 0.7em 0em 0.5em;
   border-radius: 0.4em;
   max-height: fit-content;
   width: 12.5em;
@@ -433,6 +434,7 @@ input.radio {
       white-space: nowrap;
       padding: 0;
       margin-right: 0.3em;
+      margin-bottom: 0.2em;
     }
   }
   /* кнопка открытия меню "Выберите" */
@@ -444,6 +446,7 @@ input.radio {
     padding: 0.3em 5.06em;
     border: 1px solid;
     border-color: rgb(var(--ids__text-RGB));
+    border-radius: 0.4em;
     background-color: rgb(var(--ids__background-RGB));
     box-shadow: none;
     cursor: pointer;
@@ -500,6 +503,7 @@ input.radio {
       cursor: pointer;
       color: rgb(var(--ids__text-RGB));
       transition: color 0.5s ease;
+      border-radius: 0.4em;
 
       @media screen and (max-width: 768px) {
         width: 100%;
