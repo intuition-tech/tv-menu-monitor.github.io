@@ -50,7 +50,7 @@
   }
 
   & .to-connect {
-    outline: 1.2px solid rgba(var(--ids__hover-RGB), 1);
+    outline: 1.5px solid rgba(var(--ids__hover-RGB), 1);
     position: relative;
     padding: 0.1em;
     padding-bottom: 0.9em;
