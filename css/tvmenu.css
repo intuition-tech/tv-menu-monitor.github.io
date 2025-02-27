@@ -52,7 +52,6 @@
     position: relative;
     outline: 1.5px solid rgba(var(--ids__hover-RGB), 1);
     border-radius: 0.4em;
-    /* padding: 0.1em; */
     padding-top: 0.9em;
 
     &:after {
@@ -60,16 +59,10 @@
       position: absolute;
       top: -0em;
 
-      left: calc(50% - 6vw);
+      left: calc(50% - 5vw);
+      left: calc(50% - 6em);
       font-size: 0.75em;
-      /* font-weight: 550; */
       color: rgba(var(--ids__hover-RGB), 1);
-
-      @media screen and (max-width: 768px) {
-        left: calc(50% - 10vw);
-      }
-    }
-    & p.title {
     }
   }
 }
