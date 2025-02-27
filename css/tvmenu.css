@@ -193,7 +193,7 @@ p.comment {
   border-radius: 0.4em;
   margin-top: 0.3em;
 }
-& .show {
+p.show {
   display: inline-block;
 }
 
