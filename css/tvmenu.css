@@ -231,12 +231,8 @@ p.show {
     font-weight: 580;
   }
 
-  & p {
-    /* font-size: .9em; */
-
-    /* @media screen and (max-width: 768px) {
-      font-size: 0.9em;
-    } */
+  & p.instruction {
+    margin-bottom: 1.1em;
   }
 
   /* // формат и период */
@@ -280,11 +276,10 @@ p.show {
     }
   }
   & .format-wrap {
-    margin-bottom: 1.8em;
+    margin-bottom: 1.1em;
     width: 16vw;
     @media screen and (max-width: 768px) {
       width: 100%;
-      margin-bottom: 0.3em;
     }
   }
   & .period-wrap {
@@ -292,7 +287,6 @@ p.show {
     width: 12vw;
     @media screen and (max-width: 768px) {
       width: 90%;
-      margin-bottom: 0em;
     }
   }
 }
@@ -367,13 +361,11 @@ input.radio {
   display: flex;
   flex-direction: column;
   height: 2em;
-  margin: 2em 0 3em;
+  margin-bottom: 1.1em;
   position: relative;
 
   @media screen and (max-width: 768px) {
     align-content: flex-start;
-    margin-top: 0.8em;
-    margin: 1em 0 2em;
   }
 
   & nav {
