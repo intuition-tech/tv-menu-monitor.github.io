@@ -47,6 +47,10 @@ html {
 
   font-size: calc(var(--mobile-font-size-min) * 1px);
 
+
+                /* TV MENU  */
+  --width-filter-menu: 14em;
+
   @media screen and (min-width: 320px) {
     font-size: calc(
       var(--mobile-font-size-min) * 1px +
