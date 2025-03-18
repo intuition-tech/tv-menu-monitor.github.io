@@ -16,20 +16,6 @@
     & figure {
       margin-bottom: 0.3em;
     }
-    & .rotation-h {
-      position: absolute;
-      rotate: 270deg;
-      margin-top: 6%;
-      margin-left: -3.5em;
-      z-index: 1;
-    }
-    & .rotation-v {
-      position: absolute;
-      rotate: 270deg;
-      margin-top: 10%;
-      margin-left: -3.5em;
-      z-index: 1;
-    }
   }
   & .previous {
     img {
@@ -39,19 +25,32 @@
 
   & .to-connect {
     position: relative;
-    outline: 1.5px solid rgba(var(--ids__hover-RGB), 1);
-    border-radius: 0.4em;
-    padding-top: 1.2em;
+    /* outline: 2.7px solid rgba(var(--ids__hover-RGB), 1);
+    border-radius: 0.4em; */
+    /* padding-top: 1.2em; */
 
-    &:after {
-      content: "Необходимо подключить";
+    /* &:before {
+      content: "⬤";
+      font-size: 1.8em;
       position: absolute;
-      top: 0.2em;
-
-      left: calc(50% - 5vw);
-      left: calc(50% - 6em);
-      font-size: 0.75em;
       color: rgba(var(--ids__hover-RGB), 1);
+      top: -0.8em;
+      left: -0.3em;
+    } */
+    &:after {
+      position: absolute;
+      content: "необходимо подключить";
+      top: -1.5em;
+      right: 1.6em;
+      font-size: 0.63em;
+      font-weight: 550;
+      line-height: 0.96em;
+      width: 9em;
+      border-radius: 5em;
+      background-color: rgba(var(--ids__hover-RGB), 1);
+      color: rgba(var(--ids__background-RGB), 1);
+      padding: 0.6em 0 0.6em 1.5em;
+      rotate: 9deg;
     }
   }
 }
@@ -76,6 +75,7 @@
   );
   z-index: 1;
   text-align: center;
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -139,9 +139,11 @@
 
 /* // название макета МОЖНО СКОПИРОВАТЬ */
 p.title {
-  display: inline-flex;
+  display: inline-block;
+  position: relative;
+  text-align: center;
   margin: 0;
-  padding: 0.3em 0.5em 0.3em 0.3em;
+  padding: 0.3em 0;
   border: 1px solid;
   border-color: rgb(var(--text-RGB));
   border-radius: 0.4em;
@@ -152,19 +154,34 @@ p.title {
   overflow: hidden;
   word-break: break-word;
   transition: color 0.5s ease, border-color 0.5s ease;
-
+  &:after {
+    content: url(/copy.svg);
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -1.3em;
+    margin-right: 0.3em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
   &:hover {
     color: rgb(var(--ids__hover-RGB));
     transition: color 0s ease, border-color 0s ease;
+
+    &:after {
+      opacity: 0.7;
+      transition: opacity 0s ease;
+      /* transition: color 0.3s ease, opacity 0.3s ease; */
+    }
   }
+}
+.time {
 }
 p.comment {
   display: none;
   padding: 0.3em 0.5em 0.3em 0.3em;
   margin-top: 0.3em;
-  border: 1px solid;
-  border-color: rgb(var(--text-RGB));
-  border-radius: 0.4em;
+
   width: 100%;
 }
 p.show {
@@ -180,7 +197,7 @@ p.show {
   top: 0;
   background-color: rgb(var(--ids__background-RGB));
 
-  padding: 0.6em 1em 0.7em;
+  padding: 0.6em 1em 1.5em;
   margin: 0.45em 0.7em 0em 0em;
   border-radius: 0.4em;
   max-height: fit-content;
@@ -190,8 +207,13 @@ p.show {
   -webkit-box-shadow: -5px 12px 23px 0px rgba(217, 217, 217, 0.87);
   -moz-box-shadow: -5px 12px 23px 0px rgba(217, 217, 217, 0.87);
 
+  -webkit-box-shadow: 2px 15px 83px -56px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 15px 83px -56px rgba(0, 0, 0, 1);
+  box-shadow: 2px 15px 83px -56px rgba(0, 0, 0, 1);
+
   @media screen and (max-width: 768px) {
     margin-right: 0em;
+    width: 13.8em;
   }
 
   & h1 {
@@ -347,10 +369,11 @@ input.radio {
   }
   /* кнопка открытия меню "Выберите" */
   & button {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     width: 100%;
     font-size: 0.9em;
+    text-align: left;
     white-space: nowrap;
     padding: 0.5em;
     border-top: 1px solid;
@@ -361,7 +384,7 @@ input.radio {
     border-top-left-radius: 0.4em;
     border-end-end-radius: 0.4em;
     border-end-start-radius: 0.4em;
-    border-color: rgb(var(--ids__text-RGB));
+    border-color: rgba(var(--ids__text-RGB), 0.3);
     background-color: rgb(var(--ids__background-RGB));
     box-shadow: none;
     cursor: pointer;

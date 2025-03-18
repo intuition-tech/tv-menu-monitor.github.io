@@ -19,17 +19,17 @@ titlesArray.forEach(copyTitle);
 
 
 
-// если комментариев нет - блок comments не отображается
-const commentArray = Array.from(document.getElementsByClassName('comment'));
+// // если комментариев нет - блок comments не отображается
+// const commentArray = Array.from(document.getElementsByClassName('comment'));
 
-function showComments(comment) {
-  if (comment.innerText.trim().length > 0) {
-    comment.classList.add('show') 
-  } else {
-    comment.classList.remove('show') 
-  }
-}
-commentArray.forEach(showComments);
+// function showComments(comment) {
+//   if (comment.innerText.trim().length > 0) {
+//     comment.classList.add('show') 
+//   } else {
+//     comment.classList.remove('show') 
+//   }
+// }
+// commentArray.forEach(showComments);
 
 //////// - ФИЛЬТР МЕНЮ -
 
