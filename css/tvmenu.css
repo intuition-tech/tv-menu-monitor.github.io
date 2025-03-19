@@ -253,11 +253,8 @@ p.show {
         align-items: center;
         margin-bottom: 0.3em;
       }
-
-      & input {
-        @media screen and (max-width: 768px) {
-          margin-right: 0.2em;
-        }
+      & label {
+        margin-left: -0.04em;
       }
     }
   }
@@ -286,8 +283,7 @@ input.radio {
   position: relative;
   width: 16px;
   height: 16px;
-  top: 3px;
-  margin-right: 0.2em;
+  top: 2px;
   border-radius: 50%;
   border: 1px solid;
   border-color: rgb(var(--text-RGB));
@@ -410,26 +406,33 @@ input.radio {
       /* // arrow down */
       & span.arrow {
         margin-bottom: 0;
-        margin-top: 0.45em;
-        transition: transform 0.3s ease-out;
-        transform: rotate(224deg);
+        margin-top: 0.3em;
         border-color: rgb(var(--ids__text-RGB));
+        transform: rotate(224deg);
       }
+    }
+    &:not(.active) span.arrow {
+      transition: transform 0.3s ease-out;
     }
   }
   /* // arrow up */
   & span.arrow {
     display: inline-block;
+    position: fixed;
     width: 0;
     height: 0;
     border: solid;
     border-color: rgba(var(--ids__text-RGB), 0.75);
     border-width: 0 1.3px 1.3px 0;
-    padding: 3px;
-    transition: transform 0.3s ease-out, border-color 0.3s ease;
+    padding: 3.5px;
     transform: rotate(45deg);
-    margin-left: 0.35em;
-    margin-top: 0.25em;
+    transition: transform 0.3s ease-out, border-color 0s ease;
+    top: 3.6em;
+    right: 3em;
+
+    @media screen and (max-width: 768px) {
+      right: 2em;
+    }
   }
 
   & ul#menuList {

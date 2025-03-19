@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openMenuButton = document.getElementById("openMenu");
   const menuList = document.getElementById("menuList");//<ul id="menuList">
   const menuListItems = document.querySelectorAll('#menuList li');
-  const menuDescription = document.getElementById('menu-description');//<p id="menu-description">
+  
 
 
   // восстановление выбранного при загрузке страницы
@@ -56,13 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // закрытие 
       menuList.classList.remove('active');
       openMenuButton.classList.remove('active');
-      menuDescription.classList.add('active');
 
     } else {
       // открытие 
       menuList.classList.add('active');
       openMenuButton.classList.add('active');
-      menuDescription.classList.add('hide');
     }
   }
   
@@ -144,9 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       item.setAttribute('data-selected', 'true');
       
       if (itemTitle) {
-        openMenuButton.innerText = itemTitle;
-        menuDescription.innerText = itemDescription;
-        menuDescription.classList.remove('hide');   
+        openMenuButton.innerText = itemTitle; 
       } 
       
       filterMenu();
@@ -169,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // обновление текста кнопки и описания
         openMenuButton.innerText = selectedItem.dataset.title;
-        menuDescription.innerText = selectedItem.dataset.description;
       }
     }
   }
