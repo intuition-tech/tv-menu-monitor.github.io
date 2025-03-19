@@ -3,7 +3,7 @@
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
-    margin-top: 3em;
+    margin-top: 1em;
     padding-right: calc(var(--width-filter-menu) - 0.5em);
 
     @media screen and (max-width: 768px) {
@@ -217,7 +217,7 @@ p.show {
   }
 
   & h1 {
-    font-size: 0.9em;
+    font-size: 0.99em;
     line-height: 1.35em;
     font-weight: 580;
   }
@@ -368,7 +368,6 @@ input.radio {
     /* display: flex;
     justify-content: center; */
     width: 100%;
-    font-size: 0.9em;
     text-align: left;
     white-space: nowrap;
     padding: 0.5em;
@@ -427,7 +426,7 @@ input.radio {
     padding: 3.5px;
     transform: rotate(45deg);
     transition: transform 0.3s ease-out, border-color 0s ease;
-    top: 3.6em;
+    top: 3.5em;
     right: 3em;
 
     @media screen and (max-width: 768px) {
