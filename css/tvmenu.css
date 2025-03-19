@@ -3,8 +3,8 @@
   /* обертка для каждого вида макетов */
   & .wrapper-menu-content {
     display: none;
-    margin-top: 1em;
-    padding-right: calc(var(--width-filter-menu) - 0.5em);
+    margin-top: 2em;
+    padding-right: calc((var(--width-filter-menu) + 1em) - 1%);
 
     @media screen and (max-width: 768px) {
       margin-top: 1em;
@@ -198,7 +198,7 @@ p.show {
   background-color: rgb(var(--ids__background-RGB));
 
   padding: 0.6em 1em 1.5em;
-  margin: 0.45em 0.7em 0em 0em;
+  margin: 2em 2em 0em 0em;
   border-radius: 0.4em;
   max-height: fit-content;
   width: 14em;
@@ -212,6 +212,7 @@ p.show {
   box-shadow: 2px 15px 83px -56px rgba(0, 0, 0, 1);
 
   @media screen and (max-width: 768px) {
+    margin: 0.45em 0.7em 0em 0em;
     margin-right: 0em;
     width: 13.8em;
   }
@@ -367,6 +368,7 @@ input.radio {
   & button {
     /* display: flex;
     justify-content: center; */
+    position: relative;
     width: 100%;
     text-align: left;
     white-space: nowrap;
@@ -426,10 +428,11 @@ input.radio {
     padding: 3.5px;
     transform: rotate(45deg);
     transition: transform 0.3s ease-out, border-color 0s ease;
-    top: 3.5em;
-    right: 3em;
+    top: 5.05em;
+    right: 3.8em;
 
     @media screen and (max-width: 768px) {
+      top: 3.5em;
       right: 2em;
     }
   }

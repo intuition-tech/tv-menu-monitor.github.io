@@ -31,10 +31,13 @@
   &.wide {
     width: 96%;
     padding: 0 calc(var(--ids__density) * 0.75em);
+    
+    margin: 0 0 0 1em;
 
     @media (width < 767px) {
       width: 100%;
       padding: 0 calc(var(--ids__density) * 0.6em);
+      margin: 0 auto;
     }
   }
 
