@@ -62,14 +62,14 @@ p.title {
   word-break: break-word;
   transition: color 0.5s ease, border-color 0.5s ease;
   &:after {
-    /* content: url('/copy.svg'); */
     content: url('/tv-menu-monitor.github.io/copy.svg');
+    content: url('/copy.svg');
     position: sticky;
     display: flex;
     justify-content: flex-end;
-    margin-top: -1.3em;
+    margin-top: -1.25em;
     margin-right: 0.3em;
-    opacity: 0.5;
+    opacity: 0.7;
     filter: grayscale(1);
     transition: filter 0.3s ease;
   }
