@@ -64,8 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  // клик по кнопке "Выберите"
+  // клик по кнопке "Базовое"
   openMenuButton.addEventListener("click", () => toggleMenu());
+  
   
   // закрытие меню при клике вне его
   document.addEventListener('mouseup', (e) => {
@@ -134,16 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // клик по пункту Базовое/ Дальневосточное/ Без свинины/ Пицца-бар
   menuListItems.forEach(item => {
     const itemTitle = item.dataset.title;
-    const itemDescription = item.dataset.description;
     
     item.addEventListener('click', () => {
+      if (openMenuButton.innerText.trim() === itemTitle.trim()) {
+        // Если пункт уже выбран, закрываем меню
+        
+        toggleMenu(true);
+        return; 
+    }
       saveSelectedMenu(item.dataset.filter);
       menuListItems.forEach(i => i.removeAttribute('data-selected'));
       item.setAttribute('data-selected', 'true');
       
+
+
       if (itemTitle) {
-        openMenuButton.innerText = itemTitle; 
-      } 
+        openMenuButton.innerHTML = `${itemTitle}<span class="arrow"></span>`;
+      }
       
       filterMenu();
       toggleMenu(true); // закрытие меню после выбора
@@ -164,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedItem.setAttribute('data-selected', 'true');
 
         // обновление текста кнопки и описания
-        openMenuButton.innerText = selectedItem.dataset.title;
+        openMenuButton.innerHTML = `${selectedItem.dataset.title}<span class="arrow"></span>`;
       }
     }
   }
