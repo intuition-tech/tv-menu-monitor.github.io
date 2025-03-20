@@ -62,8 +62,8 @@ p.title {
   word-break: break-word;
   transition: color 0.5s ease, border-color 0.5s ease;
   &:after {
-    content: url('/copy.svg');
-    /* content: url('/tv-menu-monitor.github.io/copy.svg'); */
+    /* content: url('/copy.svg'); */
+    content: url('/tv-menu-monitor.github.io/copy.svg');
     position: sticky;
     display: flex;
     justify-content: flex-end;
