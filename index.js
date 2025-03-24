@@ -1,6 +1,7 @@
 // скопировать название макета по клику 
 const titlesArray = Array.from(document.getElementsByClassName('title'));
 
+
 function copyTitle(title) {
   title.addEventListener('click', () => {
     const text = title.textContent;
@@ -15,7 +16,12 @@ function copyTitle(title) {
   });
 }
 
-titlesArray.forEach(copyTitle);
+titlesArray.forEach(title => {
+  const parentMenuItem = title.closest('.wrapper-menu-content'); 
+  if (parentMenuItem && parentMenuItem.dataset.period !== 'previous') {
+    copyTitle(title); 
+  }
+});
 
 
 
