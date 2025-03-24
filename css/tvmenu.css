@@ -197,8 +197,8 @@ label {
 /* радиокнопки (черные кружки) */
 input.radio {
   position: relative;
-  width: 1em;
-  height: 1em;
+  width: .95em;
+  height: .95em;
   top: 2px;
   border-radius: 50%;
   outline: .06em solid rgb(var(--ids__text-RGB));
