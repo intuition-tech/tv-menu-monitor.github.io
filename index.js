@@ -170,17 +170,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // восстановление выбранного из localStorage
   function restoreSelectedMenu() {
     const savedFilter = localStorage.getItem('selectedMenu');
+    let selectedItem;
+    
+    // Если в localStorage есть сохраненный пункт, выбираем его
     if (savedFilter) {
-      const selectedItem = document.querySelector(`#menuList li[data-filter="${savedFilter}"]`);
-      if (selectedItem) {
-        // Устанавливаем атрибут data-selected
-        menuListItems.forEach(item => item.removeAttribute('data-selected'));
-        selectedItem.setAttribute('data-selected', 'true');
-
-        // обновление текста кнопки и описания
-        openMenuButton.innerHTML = `${selectedItem.dataset.title}<span class="arrow"></span>`;
-      }
+       selectedItem = document.querySelector(`#menuList li[data-filter="${savedFilter}"]`);
     }
+    // Если сохраненный пункт не найден, выбираем "Базовое"
+    if (!selectedItem) {
+      selectedItem = document.querySelector('#menuList li[data-filter="basic"]');
+    }
+      
+    if (selectedItem) {
+      menuListItems.forEach(item => item.removeAttribute('data-selected'));
+      selectedItem.setAttribute('data-selected', 'true');
+  
+      // Обновляем текст кнопки
+      openMenuButton.innerHTML = `${selectedItem.dataset.title}<span class="arrow"></span>`;
+    }
+    
   }
 
   // Обработчик событий для радиокнопок формата и периода

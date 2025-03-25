@@ -345,7 +345,7 @@ input.radio {
       right: 2em;
     }
   }
-
+ 
   & ul#menuList {
     display: none;
     position: absolute;
@@ -363,56 +363,59 @@ input.radio {
       width: 100%;
       width: -webkit-fill-available;
     }
+    
+    
     /* пункты Базовое / дальневосточное / без свинины / пицца-бар */
     & li {
       margin: 0;
-      margin-top: 0.06em;
-      padding: 0.3em 0.4em 0.35em 0.5em;
+      padding: 0.3em 0em 0.35em 2em;
       cursor: pointer;
       color: rgb(var(--ids__text-RGB));
-      transition: color 0.3s ease, background-color 0.3s ease;
-      border-top: 1px solid;
-      border-left: 1px solid;
-      border-bottom: 1px solid;
-      border-right: 1px solid;
-      border-top-right-radius: 0.4em;
-      border-top-left-radius: 0.4em;
-      border-end-end-radius: 0.4em;
-      border-end-start-radius: 0.4em;
-      border-color: rgb(var(--ids__background-RGB));
-      
-      
+      transition: background-color 0.3s ease;
+
       @media screen and (max-width: 768px) {
         width: 100%;
-        padding: 0.4em 0 0.3em 0.5em;
+        padding: 0.4em 0 0.3em 2em;
       }
-
-      &:hover {
-        background-color: rgb(var(--ids__hover-RGB));
-        color: rgb(var(--ids__background-RGB));
-        transition: color 0s ease, background-color 0s ease;
-        border-top: 1px solid;
-        border-left: 1px solid;
-        border-bottom: 1px solid;
-        border-right: 1px solid;
-        border-top-right-radius: 0.4em;
-        border-top-left-radius: 0.4em;
+      &:last-child {
         border-end-end-radius: 0.4em;
         border-end-start-radius: 0.4em;
-        
-        &[data-selected]{
-          color: rgb(var(--ids__text-RGB));
-          border-color: white;
+      }
 
+      &[data-selected]{
+        border-radius: 0;
+        background-color:rgb(255, 218, 192);
+        transition: background-color 0.3s ease;
+        cursor: auto;
+        
+        &:before {
+          content: '✓';
+          padding-left: .5em;
+        }
+        &:last-child {
+          border-end-end-radius: 0.4em;
+          border-end-start-radius: 0.4em;
+        }
+      }
+      
+      &:hover {  
+        background-color:rgb(255, 218, 192);
+        background-color:rgb(255, 218, 192) !important;
+        transition: background-color 0s ease;
+        border-radius: 0;
+      
+        &:last-child {
+          border-end-end-radius: 0.4em;
+          border-end-start-radius: 0.4em;
         }
       }
       &:before {
         content: none;
       }
-      &[data-selected]{
-        background-color: rgba(var(--ids__text-RGB), .2);
-        cursor: auto;
-      }
+      &.hovered {
+        background-color: rgb(255, 218, 192);
+        background-color: rgb(255, 218, 192) !important;
+      }  
     }
 
 
@@ -422,6 +425,9 @@ input.radio {
     }
     &.active {
       display: block;
+    }
+    &:hover li[data-selected] {
+      background-color: transparent;
     }
   }
   /* описание под каждым видом меню */
