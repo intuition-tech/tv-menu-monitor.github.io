@@ -168,7 +168,7 @@
       --columns: 4;
       height: fit-content;
 
-      figure {
+      img {
         min-height: 7.6em;
         min-width: 13.6em;
       }
@@ -177,7 +177,7 @@
         --columns: 1;
         width: 61%;
 
-        figure {
+        img {
           min-height: 6.2em;
           min-width: 8em;
         }
@@ -189,14 +189,15 @@
     & .ids__sequence-item {
       --columns: 6;
       height: fit-content;
-      figure {
+      img {
         min-height: 15.8em;
       }
 
       @media screen and (max-width: 768px) {
         --columns: 3;
         width: 61%;
-        figure {
+        
+        img {
           min-width: 12em;
           min-height: 21em;
         }
