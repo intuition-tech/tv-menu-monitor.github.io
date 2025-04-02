@@ -104,6 +104,9 @@
       rotate: 9deg;
     }
   }
+  & .time, .rotation {
+    font-weight: 600;
+  }
 }
 
 
